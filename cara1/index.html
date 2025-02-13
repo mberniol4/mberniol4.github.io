@@ -7,10 +7,14 @@
   </head>
   <body>
     <script>
+let mic=new p5.AudioIn();// guarda a la variable mic una entrada de audio de p5.js
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  mic.start();// activa el micròfon
 }
 function draw() {
+  let vol=mic.getlevel();
+  let h=map (vol,0,1,0,400);
   background(26, 188, 156);
   fill(244, 208, 63);
   ellipse(windowWidth/2,windowHeight/2,300,300);
@@ -18,7 +22,7 @@ function draw() {
   ellipse(windowWidth/2-70,windowHeight/2-60,50,50);
    fill(253, 254, 254);
   ellipse(windowWidth/2+70,windowHeight/2-60,50,50);
-  arc(windowWidth/2,windowHeight/2+90,100,70,0,PI);
+  arc(windowWidth/2,windowHeight/2+90,100,40+h,0,PI);
 }
     </script>
 </body>
