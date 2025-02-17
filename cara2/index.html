@@ -29,7 +29,7 @@ function draw() {
   //el tercer paràmetre és la amplada de la cara.
   //el quart paràmetre és la alçada de la cara.
   //cambiarà la alçada de la cara aleatoriament ja que temblar està sumat a l'amplada i l'alçada de la cara i canviarà aleatoriament entre 10 i 50 pixels.
-  fill(42, 31-h, 13+h);//color de ulls
+  fill(42+temblar*2, 31-h, 13+h);//color de ulls
   ellipse(windowWidth/2-70,windowHeight/2-60,50,50);//ull esquerre
   ellipse(windowWidth/2+70,windowHeight/2-60,50,50);//ull dret
   arc(windowWidth/2,windowHeight/2+90,100,50+h,0,PI);//boca
