@@ -1,1 +1,47 @@
 
+
+
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js" integrity="sha512-1YMgn4j8cIL91s14ByDGmHtBU6+F8bWOMcF47S0cRO3QNm8SKPNexy4s3OCim9fABUtO++nJMtcpWbINWjMSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <script>
+let mic;
+      let temblar;
+
+      function setup() {
+  createCanvas(windowWidth,windowHeight);
+        mic=new p5.AudioIn();// guarda a la variable mic una entrada de audio de p5.js
+        mic.start();// activa el micròfon
+}
+function draw() {
+  temblar=random(10,50)
+  let vol=mic.getLevel();
+  let h=map(vol,0,1,0,800);
+  background(99, 255-h, 71);//color de fons
+  fill(249, 255+h, 71);//color de cara
+  ellipse(windowWidth/2,windowHeight/2,300+temblar,300+temblar);//cara
+  //el primer que hi ha entre parentesis es diu paràmetre i és la posició x del centre de la cara.
+  //windowWidth/2 significa que el centre de la cara coincideix amb el centre de la pantalla/finestra.
+  //el segon paràmetre és la posició y o alçada del centre de la cara.
+  //windowHeight/2 significa el centre de la cara en alçada i coincideix amb el centre de la cara.
+  //el tercer paràmetre és la amplada de la cara.
+  //el quart paràmetre és la alçada de la cara.
+  //cambiarà la alçada de la cara aleatoriament ja que temblar està sumat a l'amplada i l'alçada de la cara i canviarà aleatoriament entre 10 i 50 pixels.
+  fill(255+temblar*h/4, 255, 255);//color de ulls i boca
+  ellipse(windowWidth/2-70+h*3,windowHeight/2-60+h*3,50,50);//ull esquerre
+  ellipse(windowWidth/2+70+h*3,windowHeight/2-60+h*3,50,50);//ull dret
+
+  fill(209, 37, 0);
+  arc(windowWidth/2,windowHeight/2+90,100,50+h,0,PI);//boca
+  
+  fill(0+temblar*h/2, 0, 0);
+  ellipse(windowWidth/2-70+h*3,windowHeight/2-60+h*3,30,30);
+  ellipse(windowWidth/2+70+h*3,windowHeight/2-60+h*3,30,30);
+}
+      console.log(h);
+    </script>
+</body>
+</html>
