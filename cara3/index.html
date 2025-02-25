@@ -1,6 +1,3 @@
-
-
-
 <html>
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js" integrity="sha512-1YMgn4j8cIL91s14ByDGmHtBU6+F8bWOMcF47S0cRO3QNm8SKPNexy4s3OCim9fABUtO++nJMtcpWbINWjMSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -23,13 +20,11 @@ function draw() {
   background(99, 255-h, 71);//color de fons
   fill(249, 255+h, 71);//color de cara
   ellipse(windowWidth/2,windowHeight/2,300+temblar,300+temblar);//cara
-  //el primer que hi ha entre parentesis es diu paràmetre i és la posició x del centre de la cara.
-  //windowWidth/2 significa que el centre de la cara coincideix amb el centre de la pantalla/finestra.
-  //el segon paràmetre és la posició y o alçada del centre de la cara.
-  //windowHeight/2 significa el centre de la cara en alçada i coincideix amb el centre de la cara.
-  //el tercer paràmetre és la amplada de la cara.
-  //el quart paràmetre és la alçada de la cara.
-  //cambiarà la alçada de la cara aleatoriament ja que temblar està sumat a l'amplada i l'alçada de la cara i canviarà aleatoriament entre 10 i 50 pixels.
+  
+  // Dibuja la gorra
+  fill(0, 0, 255); // color de la gorra (puedes cambiarlo)
+  arc(windowWidth/2, windowHeight/2-150, 350, 150, PI, 0); // gorra
+  
   fill(255+temblar*h/4, 255, 255);//color de ulls i boca
   ellipse(windowWidth/2-70+h*3,windowHeight/2-60+h*3,50,50);//ull esquerre
   ellipse(windowWidth/2+70+h*3,windowHeight/2-60+h*3,50,50);//ull dret
