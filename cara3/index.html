@@ -21,9 +21,23 @@ function draw() {
   fill(249, 255+h, 71);//color de cara
   ellipse(windowWidth/2,windowHeight/2,300+temblar,300+temblar);//cara
   
-  // Dibuja la gorra
-  fill(0, 0, 255); // color de la gorra (puedes cambiarlo)
+  // Dibuja la gorra detallada
+  fill(0, 102, 204); // color de la gorra (puedes cambiarlo)
+  
+  // Visera de la gorra (más detallada)
+  beginShape();
+  vertex(windowWidth/2-150, windowHeight/2-90); 
+  vertex(windowWidth/2+150, windowHeight/2-90);
+  vertex(windowWidth/2+100, windowHeight/2-60); 
+  vertex(windowWidth/2-100, windowHeight/2-60); 
+  endShape(CLOSE);
+
+  // Parte superior de la gorra
   arc(windowWidth/2, windowHeight/2-150, 350, 150, PI, 0); // gorra
+  
+  // Detalles de la parte superior de la gorra
+  fill(0, 76, 153); // un color más oscuro para la parte superior
+  ellipse(windowWidth/2, windowHeight/2-180, 200, 60); // parte de arriba de la gorra
   
   fill(255+temblar*h/4, 255, 255);//color de ulls i boca
   ellipse(windowWidth/2-70+h*3,windowHeight/2-60+h*3,50,50);//ull esquerre
