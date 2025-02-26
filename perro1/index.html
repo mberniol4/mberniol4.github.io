@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js" integrity="sha512-1YMgn4j8cIL91s14ByDGmHtBU6+F8bWOMcF47S0cRO3QNm8SKPNexy4s3OCim9fABUtO++nJMtcpWbINWjMSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <script>
+function setup() {
+  createCanvas(400, 400);
+  noLoop();
+}
+
+function draw() {
+  background(220);
+
+  // Cuerpo del perro
+  fill(150, 75, 0); // Color marrón
+  ellipse(200, 300, 200, 100); // Cuerpo
+
+  // Cabeza del perro
+  ellipse(200, 180, 120, 120); // Cabeza
+
+  // Oreja izquierda
+  fill(139, 69, 19); // Color marrón oscuro
+  triangle(140, 130, 110, 80, 180, 120); // Oreja izquierda
+
+  // Oreja derecha
+  triangle(260, 130, 290, 80, 220, 120); // Oreja derecha
+
+  // Ojos
+  fill(255); // Color blanco para los ojos
+  ellipse(170, 170, 40, 40); // Ojo izquierdo
+  ellipse(230, 170, 40, 40); // Ojo derecho
+
+  // Pupilas
+  fill(0); // Color negro para las pupilas
+  ellipse(170, 170, 15, 15); // Pupila izquierda
+  ellipse(230, 170, 15, 15); // Pupila derecha
+
+  // Nariz
+  fill(0); // Color negro para la nariz
+  ellipse(200, 210, 30, 20); // Nariz
+
+  // Boca
+  stroke(0);
+  noFill();
+  arc(200, 230, 60, 40, 0, PI); // Boca
+
+  // Cola
+  stroke(150, 75, 0);
+  strokeWeight(10);
+  noFill();
+  beginShape();
+  curveVertex(250, 300); // Punto de inicio de la cola
+  curveVertex(250, 300); // Control de la curva
+  curveVertex(300, 200); // Control de la curva
+  curveVertex(250, 180); // Fin de la cola
+  endShape();
+}
+    </script>
+  </body>
+</html>
