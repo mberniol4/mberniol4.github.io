@@ -39,11 +39,11 @@ function draw() {
   ellipse(windowWidth / 2 + 70 + h * 3, windowHeight / 2 - 60 + h * 3, 30, 30); // Pupil·la dreta
 
   // Dibuixa la nariz (a la mateixa alçada que els ulls)
-  fill(255, 182, 145); // Color de la nariz
+  fill(243, 233, 23); // Color de la nariz
   triangle(
-    windowWidth / 2, windowHeight / 2 - 60, // Punt superior de la nariz (a la mateixa alçada que els ulls)
-    windowWidth / 2 - 15, windowHeight / 2 + 20, // Punt inferior esquerre
-    windowWidth / 2 + 15, windowHeight / 2 + 20  // Punt inferior dret
+    windowWidth / 2, windowHeight / 2 - 60-h*3, // Punt superior de la nariz (a la mateixa alçada que els ulls)
+    windowWidth / 2 - 15, windowHeight / 2 + 20-h*3, // Punt inferior esquerre
+    windowWidth / 2 + 15, windowHeight / 2 + 20-h*3  // Punt inferior dret
   );
 
   // Dibuixa el bigote
