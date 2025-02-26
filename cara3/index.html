@@ -46,6 +46,15 @@ function draw() {
     windowWidth / 2 + 15, windowHeight / 2 + 20  // Punt inferior dret
   );
 
+  // Dibuixa el bigote
+  stroke(0); // Color del bigote (negro)
+  strokeWeight(3); // Grosor del bigote
+  noFill();
+  // Bigote esquerre
+  arc(windowWidth / 2 - 30, windowHeight / 2 + 30, 60, 20, 0, PI);
+  // Bigote dret
+  arc(windowWidth / 2 + 30, windowHeight / 2 + 30, 60, 20, 0, PI);
+
   fill(0, 0, 0); // Color del barret
   rect(windowWidth / 2 - 100, windowHeight / 2 - 170 - h*3, 200, 50); // Base del barret
   rect(windowWidth / 2 - 60, windowHeight / 2 - 220 - h*3, 120, 100); // Copa del barret
