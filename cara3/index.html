@@ -10,39 +10,47 @@ let temblar;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  mic = new p5.AudioIn(); // Guarda la entrada de audio en la variable mic
-  mic.start(); // Activa el micrófono
+  mic = new p5.AudioIn(); // Desa l'entrada d'àudio a la variable mic
+  mic.start(); // Activa el micròfon
 }
 
 function draw() {
   temblar = random(10, 50);
-  let vol = mic.getLevel(); // Obtiene el nivel de volumen
-  let h = map(vol, 0, 1, 0, 300); // Mapea el volumen para hacer que la copa suba o baje
+  let vol = mic.getLevel(); // Obté el nivell de volum
+  let h = map(vol, 0, 1, 0, 300); // Mapeja el volum per fer que la cara pugi o baixi
 
-  background(99, 255 - h, 71); // Color de fondo
+  background(99, 255 - h, 71); // Color de fons
 
-  // Dibuja la cara
+  // Dibuixa la cara
   fill(249, 255 + h, 71); // Color de la cara
   ellipse(windowWidth / 2, windowHeight / 2, 300 + temblar, 300 + temblar); // Cara
   
-  // Dibuja los ojos
-  fill(255 + temblar * h / 4, 255, 255); // Color de los ojos
-  ellipse(windowWidth / 2 - 70 + h * 3, windowHeight / 2 - 60 + h * 3, 50, 50); // Ojo izquierdo
-  ellipse(windowWidth / 2 + 70 + h * 3, windowHeight / 2 - 60 + h * 3, 50, 50); // Ojo derecho
+  // Dibuixa els ulls
+  fill(255 + temblar * h / 4, 255, 255); // Color dels ulls
+  ellipse(windowWidth / 2 - 70 + h * 3, windowHeight / 2 - 60 + h * 3, 50, 50); // Ull esquerre
+  ellipse(windowWidth / 2 + 70 + h * 3, windowHeight / 2 - 60 + h * 3, 50, 50); // Ull dret
 
-  // Dibuja la boca
+  // Dibuixa la boca
   fill(209, 37, 0); 
   arc(windowWidth / 2, windowHeight / 2 + 90, 100, 50 + h, 0, PI); // Boca
   
-  fill(0 + temblar * h / 2, 0, 0); // Color de los ojos (dentro)
-  ellipse(windowWidth / 2 - 70 + h * 3, windowHeight / 2 - 60 + h * 3, 30, 30); // Pupila izquierda
-  ellipse(windowWidth / 2 + 70 + h * 3, windowHeight / 2 - 60 + h * 3, 30, 30); // Pupila derecha
+  fill(0 + temblar * h / 2, 0, 0); // Color de les pupil·les
+  ellipse(windowWidth / 2 - 70 + h * 3, windowHeight / 2 - 60 + h * 3, 30, 30); // Pupil·la esquerra
+  ellipse(windowWidth / 2 + 70 + h * 3, windowHeight / 2 - 60 + h * 3, 30, 30); // Pupil·la dreta
 
-  fill(0, 0, 0); // Color del gorro
-  rect(windowWidth / 2 - 100, windowHeight / 2 - 170 - h*3, 200, 50); // Base del gorro
-  rect(windowWidth / 2 - 60, windowHeight / 2 - 220 - h*3, 120, 100); // Copa del gorro
+  // Dibuixa la nariz
+  fill(255, 182, 145); // Color de la nariz
+  triangle(
+    windowWidth / 2, windowHeight / 2 + 20, // Punt superior de la nariz
+    windowWidth / 2 - 15, windowHeight / 2 + 50, // Punt inferior esquerre
+    windowWidth / 2 + 15, windowHeight / 2 + 50  // Punt inferior dret
+  );
 
-  console.log(h); // Ver el nivel de volumen en la consola
+  fill(0, 0, 0); // Color del barret
+  rect(windowWidth / 2 - 100, windowHeight / 2 - 170 - h*3, 200, 50); // Base del barret
+  rect(windowWidth / 2 - 60, windowHeight / 2 - 220 - h*3, 120, 100); // Copa del barret
+
+  console.log(h); // Veure el nivell de volum a la consola
 }
     </script>
   </body>
