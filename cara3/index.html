@@ -8,6 +8,7 @@
 let mic;
 let temblar;
 let sinus; //creem una variable que es diu sinus
+      let cosinus;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   mic = new p5.AudioIn(); // Desa l'entrada d'àudio a la variable mic
@@ -17,9 +18,11 @@ function setup() {
 function draw() {
   temblar = random(10, 50);
   sinus = (sin(frameCount * 0.1)); //la variable sinus crea numeros entre -1 i +1
+  cosinus = (sin(frameCount * 0.1)); //la variable sinus crea numeros entre -1 i +1
   //frameCount conta els fotogrames i fa 60 sinus / segon
   //això vol dir 60 numeros entre -1 i +1 ordenats per segon
   let movsinus = map(sinus,-1,1,0,50); //converteix els numeros entre -1 i 1, donarà numeros proporcionals entre 0 i 50
+  let movcosinus = map(cosinus,-1,1,0,50);
   let vol = mic.getLevel(); // Obté el nivell de volum
   let h = map(vol, 0, 1, 0, 300); // Mapeja el volum per fer que la cara pugi o baixi
 
@@ -27,7 +30,7 @@ function draw() {
 
   // Dibuixa la cara
   fill(249, 255 + h, 71); // Color de la cara
-  ellipse(windowWidth / 2, windowHeight / 2, 300 + temblar, 300 + temblar); // Cara
+  ellipse(windowWidth / 2, windowHeight / 2, 300 + movsinus, 300 + movsinus); // Cara
   
   // Dibuixa els ulls
   fill(255 + temblar * h / 4, 255, 255); // Color dels ulls
