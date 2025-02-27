@@ -7,7 +7,7 @@
     <script>
 let mic;
 let temblar;
-
+let sinus;//creem una variable que es diu sinus
 function setup() {
   createCanvas(windowWidth, windowHeight);
   mic = new p5.AudioIn(); // Desa l'entrada d'àudio a la variable mic
@@ -16,6 +16,7 @@ function setup() {
 
 function draw() {
   temblar = random(10, 50);
+  sinus=(sin(frameCount * 0.1);//la variable sinus crea numeros entre -1 i +1
   let vol = mic.getLevel(); // Obté el nivell de volum
   let h = map(vol, 0, 1, 0, 300); // Mapeja el volum per fer que la cara pugi o baixi
 
