@@ -22,14 +22,14 @@ function draw() {
 t += 0.01;
         // Incrementa la variable 't' per fer que el 'noise()' canviï progressivament.
 
-        let centerX = width / 2 + noise(t) * 100 - 50;
+        let noiseX = noise(t) * 100 - 50;
         // Calcula la posició X del centre de la cara.
         // width / 2: Posa el centre a la meitat de l'amplada del canvas.
         // noise(t): Funció 'noise' genera valors suaus entre 0 i 1, donant moviment orgànic.
         // * 100: Amplifica el moviment.
         // - 50: Centra el moviment al voltant de la posició original.
 
-        let centerY = height / 2 + noise(t + 100) * 100 - 50;
+        let noiseY =  noise(t + 100) * 100 - 50;
         // Calcula la posició Y del centre de la cara amb el mateix patró.
         // noise(t + 100): Utilitza un desplaçament (+100) perquè X i Y siguin independents.
   temblar = random(10, 50);
