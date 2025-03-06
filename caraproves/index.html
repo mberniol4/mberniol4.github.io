@@ -44,6 +44,42 @@ t += 0.01;
   let vol = mic.getLevel(); // Obté el nivell de volum
   let h = map(vol, 0, 1, 0, 300); // Mapeja el volum per fer que la cara pugi o baixi
 
+   <div id="botons">
+        <!-- Cada botó crida una funció en fer clic; "event.stopPropagation()" evita que es propagi l'esdeveniment -->
+        <button onclick="toggleSomriure(); event.stopPropagation();">Somriu (S)</button>
+        <button onclick="toggleUlls(); event.stopPropagation();">Ulls (U)</button>
+        <button onclick="togglePlora(); event.stopPropagation();">Plora (P)</button>
+    </div>
+<ul>
+            <li><strong>Micròfon:</strong> La boca es mou amb el volum (parla fort).</li>
+            <li><strong>Clic/Tàctil dins el canvas:</strong> Canvia el color de fons i mou la cara.</li>
+            <li><strong>Tecla 'S' o botó Somriu:</strong> Boca somrient.</li>
+            <li><strong>Tecla 'U' o botó Ulls:</strong> Obrir/Tancar ulls.</li>
+            <li><strong>Tecla 'P' o botó Plora:</strong> Ulls amb llàgrimes.</li>
+        </ul>
+  // Funció per canviar l'estat de la boca (somriure)
+        function toggleSomriure() {
+            somriu = !somriu; // Inverteix l'estat de "somriu"
+        }
+
+        // Funció per canviar l'estat dels ulls (oberts/tancats)
+        function toggleUlls() {
+            ullsTancats = !ullsTancats; // Inverteix l'estat de "ullsTancats"
+        }
+
+        // Funció per activar o desactivar les llàgrimes
+        function togglePlora() {
+            plora = !plora; // Inverteix l'estat de "plora"
+        }
+
+        // Funció que s'executa quan es prem una tecla
+        function keyPressed() {
+            if (key === 's' || key === 'S') toggleSomriure();  // Si es prem 'S', activa o desactiva el somriure
+            if (key === 'u' || key === 'U') toggleUlls();       // Si es prem 'U', obre o tanca els ulls
+            if (key === 'p' || key === 'P') togglePlora();       // Si es prem 'P', mostra o amaga les llàgrimes
+        }
+
+
   background(99+noise3, 255, 71-noise3); // Color de fons
 
   // Dibuixa la cara
