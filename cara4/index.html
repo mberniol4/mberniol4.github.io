@@ -19,6 +19,8 @@ function setup() {
 }
 
 function draw() {
+   t += 0.01;
+        // Incrementa la variable 't' per fer que el 'noise()' canviï progressivament.
   temblar = random(10, 50);
   sinus = (sin(frameCount * 0.1)); //la variable sinus crea numeros entre -1 i +1
   cosinus = (sin(frameCount * 0.1)); //la variable sinus crea numeros entre -1 i +1
