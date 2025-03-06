@@ -47,24 +47,24 @@ t += 0.01;
 
   // Dibuixa la cara
   fill(249, 255 + h, 71); // Color de la cara
-  ellipse(windowWidth / 2, windowHeight / 2, 300 + noise1, 300 + noise1); // Cara
+  ellipse(mouseX, mouseY, 300 + noise1, 300 + noise1); // Cara
 
 
   // Dibuixa la boca
   fill(209, 37, 0); 
-  arc(windowWidth / 2, windowHeight / 2 + 90, 100, 50 + h, 0, PI); // Boca
+  arc(mouseX, mouseY + 90, 100, 50 + h, 0, PI); // Boca
 
   // Dibuixa la nariz (a la mateixa alçada que els ulls)
   fill(243, 233, 23); // Color de la nariz
   triangle(
-    windowWidth / 2, windowHeight / 2 - 60-h*3, // Punt superior de la nariz (a la mateixa alçada que els ulls)
-    windowWidth / 2 - 15, windowHeight / 2 + 20-h*3, // Punt inferior esquerre
-    windowWidth / 2 + 15, windowHeight / 2 + 20-h*3  // Punt inferior dret
+    mouseX, mouseY - 60-h*3, // Punt superior de la nariz (a la mateixa alçada que els ulls)
+    mouseX - 15, mouseY + 20-h*3, // Punt inferior esquerre
+    mouseX + 15, mouseY + 20-h*3  // Punt inferior dret
   );
 
   fill(0, 0, 0); // Color del barret
-  rect(windowWidth / 2 - 100, windowHeight / 2 - 170 - h*3, 200, 50); // Base del barret
-  rect(windowWidth / 2 - 60, windowHeight / 2 - 270 - h*3, 120, 150); // Copa del barret
+  rect(mouseX - 100, mouseY - 170 - h*3, 200, 50); // Base del barret
+  rect(mouseX - 60, mouseY - 270 - h*3, 120, 150); // Copa del barret
 
   // Dibuixa els ulls
   fill(255 + temblar * h / 4, 255, 255); // Color dels ulls
