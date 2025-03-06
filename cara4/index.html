@@ -1,0 +1,66 @@
+
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js" integrity="sha512-1YMgn4j8cIL91s14ByDGmHtBU6+F8bWOMcF47S0cRO3QNm8SKPNexy4s3OCim9fABUtO++nJMtcpWbINWjMSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <script>
+let mic;
+let temblar;
+let sinus; //creem una variable que es diu sinus
+      let cosinus;
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  mic = new p5.AudioIn(); // Desa l'entrada d'àudio a la variable mic
+  mic.start(); // Activa el micròfon
+}
+
+function draw() {
+  temblar = random(10, 50);
+  sinus = (sin(frameCount * 0.1)); //la variable sinus crea numeros entre -1 i +1
+  cosinus = (sin(frameCount * 0.1)); //la variable sinus crea numeros entre -1 i +1
+  //frameCount conta els fotogrames i fa 60 sinus / segon
+  //això vol dir 60 numeros entre -1 i +1 ordenats per segon
+  let movsinus = map(sinus,-1,1,0,50); //converteix els numeros entre -1 i 1, donarà numeros proporcionals entre 0 i 50
+  let movcosinus = map(cosinus,-1,1,0,50);
+  let vol = mic.getLevel(); // Obté el nivell de volum
+  let h = map(vol, 0, 1, 0, 300); // Mapeja el volum per fer que la cara pugi o baixi
+
+  background(99, 255 - h, 71); // Color de fons
+
+  // Dibuixa la cara
+  fill(249, 255 + h, 71); // Color de la cara
+  ellipse(windowWidth / 2, windowHeight / 2, 300 + movsinus, 300 + movsinus); // Cara
+  
+  // Dibuixa els ulls
+  fill(255 + temblar * h / 4, 255, 255); // Color dels ulls
+  ellipse(windowWidth / 2 - 70 + h * 3, windowHeight / 2 - 60 + h * 3, 50, 50); // Ull esquerre
+  ellipse(windowWidth / 2 + 70 + h * 3, windowHeight / 2 - 60 + h * 3, 50, 50); // Ull dret
+
+  // Dibuixa la boca
+  fill(209, 37, 0); 
+  arc(windowWidth / 2, windowHeight / 2 + 90, 100, 50 + h, 0, PI); // Boca
+  
+  fill(0 + temblar * h / 2, 0, 0); // Color de les pupil·les
+  ellipse(windowWidth / 2 - 70 + h * 3, windowHeight / 2 - 60 + h * 3, 30, 30); // Pupil·la esquerra
+  ellipse(windowWidth / 2 + 70 + h * 3, windowHeight / 2 - 60 + h * 3, 30, 30); // Pupil·la dreta
+
+  // Dibuixa la nariz (a la mateixa alçada que els ulls)
+  fill(243, 233, 23); // Color de la nariz
+  triangle(
+    windowWidth / 2, windowHeight / 2 - 60-h*3, // Punt superior de la nariz (a la mateixa alçada que els ulls)
+    windowWidth / 2 - 15, windowHeight / 2 + 20-h*3, // Punt inferior esquerre
+    windowWidth / 2 + 15, windowHeight / 2 + 20-h*3  // Punt inferior dret
+  );
+
+  
+  fill(0, 0, 0); // Color del barret
+  rect(windowWidth / 2 - 100, windowHeight / 2 - 170 - h*3, 200, 50); // Base del barret
+  rect(windowWidth / 2 - 60, windowHeight / 2 - 270 - h*3, 120, 150); // Copa del barret
+
+  console.log(h); // Veure el nivell de volum a la consola
+}
+    </script>
+  </body>
+</html>
