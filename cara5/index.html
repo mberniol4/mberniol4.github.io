@@ -1,1 +1,90 @@
 
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js" integrity="sha512-1YMgn4j8cIL91s14ByDGmHtBU6+F8bWOMcF47S0cRO3QNm8SKPNexy4s3OCim9fABUtO++nJMtcpWbINWjMSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <script>
+       let t = 0;
+      // Declara i inicialitza la variable 't', que servirà per crear un moviment suau amb 'noise()'.
+let mic;
+let temblar;
+let sinus; //creem una variable que es diu sinus
+      let cosinus;
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  mic = new p5.AudioIn(); // Desa l'entrada d'àudio a la variable mic
+  mic.start(); // Activa el micròfon
+}
+
+function draw() {
+t += 0.01;
+        // Incrementa la variable 't' per fer que el 'noise()' canviï progressivament.
+
+        let noise1 = noise(t) * 100;
+        // Calcula la posició X del centre de la cara.
+        // width / 2: Posa el centre a la meitat de l'amplada del canvas.
+        // noise(t): Funció 'noise' genera valors suaus entre 0 i 1, donant moviment orgànic.
+        // * 100: Amplifica el moviment.
+        // - 50: Centra el moviment al voltant de la posició original.
+
+        let noise2 =  noise(t + 100) * 50;
+        // Calcula la posició Y del centre de la cara amb el mateix patró.
+        // noise(t + 100): Utilitza un desplaçament (+100) perquè X i Y siguin independents.
+  let noise3 =  noise(t + 200) * 255;
+  temblar = random(10, 50);
+  sinus = (sin(frameCount * 0.1)); //la variable sinus crea numeros entre -1 i +1
+  cosinus = (sin(frameCount * 0.1)); //la variable sinus crea numeros entre -1 i +1
+  //frameCount conta els fotogrames i fa 60 sinus / segon
+  //això vol dir 60 numeros entre -1 i +1 ordenats per segon
+  let movsinus = map(sinus,-1,1,0,50); //converteix els numeros entre -1 i 1, donarà numeros proporcionals entre 0 i 50
+  let movcosinus = map(cosinus,-1,1,0,50);
+  let vol = mic.getLevel(); // Obté el nivell de volum
+  let h = map(vol, 0, 1, 0, 300); // Mapeja el volum per fer que la cara pugi o baixi
+
+  background(99+noise3, 255, 71-noise3); // Color de fons
+
+  // Dibuixa la cara
+  fill(249, 255 + h, 71); // Color de la cara
+  ellipse(mouseX, mouseY, 300 + noise1, 300 + noise1); // Cara
+
+
+  // Dibuixa la boca
+  fill(209, 37, 0); 
+  if (smile){
+  arc(mouseX, mouseY + 90, 100, 50 + h, 0, PI); // Boca cap amunt
+  }else{
+    arc(mouseX, mouseY + 90, 100, 50 + h, 0, PI, 0); // Boca cap avall
+  }
+  // Dibuixa la nariz (a la mateixa alçada que els ulls)
+  fill(243, 233, 23); // Color de la nariz
+  triangle(
+    mouseX, mouseY - 60-h*3, // Punt superior de la nariz (a la mateixa alçada que els ulls)
+    mouseX - 15, mouseY + 20-h*3, // Punt inferior esquerre
+    mouseX + 15, mouseY + 20-h*3  // Punt inferior dret
+  );
+
+  fill(0, 0, 0); // Color del barret
+  rect(mouseX - 100, mouseY - 170 - h*3, 200, 50); // Base del barret
+  rect(mouseX - 60, mouseY - 270 - h*3, 120, 150); // Copa del barret
+
+  // Dibuixa els ulls
+  fill(255 + temblar * h / 4, 255, 255); // Color dels ulls
+  ellipse(mouseX - 70 + h * 3, mouseY - 60 + h * 3, 50, 50+noise2); // Ull esquerre
+  ellipse(mouseX + 70 + h * 3, mouseY - 60 + h * 3, 50, 50+noise2); // Ull dret
+
+   fill(0 + temblar * h / 2, 0, 0); // Color de les pupil·les
+  ellipse(mouseX - 70 + h * 3, mouseY - 60 + h * 3, 30, 30); // Pupil·la esquerra
+  ellipse(mouseX + 70 + h * 3, mouseY - 60 + h * 3, 30, 30); // Pupil·la dreta
+
+
+}
+      function keyPressed(){
+        if(key==="S"||key==="s")
+        {
+          smile=!smile;
+        }
+    </script>
+  </body>
+</html>
