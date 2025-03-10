@@ -27,15 +27,6 @@ function draw() {
   let h = map(vol, 0, 1, 0, 300); // Mapeja el volum per fer que la cara pugi o baixi
 
   background(141, 241, 194); // Color de fons
-
- // Dibuixa els ulls
-  fill(255 + temblar * h / 4, 255, 255); // Color dels ulls
-  ellipse(windowWidth / 2 - 40 + h * 3, windowHeight / 2 + 70 + h * 3, 20, 20); // Ull esquerre
-  ellipse(windowWidth / 2 + 40 + h * 3, windowHeight / 2 + 70 + h * 3, 20, 20); // Ull dret
-
-    fill(0 + temblar * h / 2, 0, 0); // Color de les pupil·les
-  ellipse(windowWidth / 2 + 40 + h * 3, windowHeight / 2 + 70 + h * 3, 10, 10); // Pupil·la esquerra
-  ellipse(windowWidth / 2 - 40 + h * 3, windowHeight / 2 + 70 + h * 3, 10, 10); // Pupil·la dreta
   
   fill(6, 90, 238);
   rect(windowWidth / 2 -10, windowHeight / 2 - 235+h*8, 20, 400);
@@ -44,7 +35,15 @@ function draw() {
   // Dibuixa la boca
   fill(189, 145, 86); 
   arc(windowWidth / 2 +0, windowHeight / 2 +170+h*8, 150, 250 , PI, 0); // Boca
-  
+
+  // Dibuixa els ulls
+  fill(255 + temblar * h / 4, 255, 255); // Color dels ulls
+  ellipse(windowWidth / 2 - 40 + h * 3, windowHeight / 2 + 70 + h * 3, 20, 20); // Ull esquerre
+  ellipse(windowWidth / 2 + 40 + h * 3, windowHeight / 2 + 70 + h * 3, 20, 20); // Ull dret
+
+  fill(0 + temblar * h / 2, 0, 0); // Color de les pupil·les
+  ellipse(windowWidth / 2 + 40 + h * 3, windowHeight / 2 + 70 + h * 3, 10, 10); // Pupil·la esquerra
+  ellipse(windowWidth / 2 - 40 + h * 3, windowHeight / 2 + 70 + h * 3, 10, 10); // Pupil·la dreta
 
   console.log(h); // Veure el nivell de volum a la consola
 }
