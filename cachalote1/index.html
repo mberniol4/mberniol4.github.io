@@ -1,132 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Micgth - Aventura Interactiva</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .game-container {
-      width: 600px;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      text-align: center;
-      font-size: 2rem;
-      color: #333;
-    }
-    .text {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    .button-container {
-      display: flex;
-      justify-content: space-around;
-    }
-    .button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    .button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
-<body>
-  <div class="game-container">
-    <h1>Micgth - Aventura Interactiva</h1>
-    <div id="story-text" class="text">
-      ¡Bienvenido a Micgth! Tu aventura comienza ahora. ¿Qué decisión tomarás?
-    </div>
-    <div class="button-container">
-      <button class="button" onclick="makeChoice('option1')">Ir al Bosque</button>
-      <button class="button" onclick="makeChoice('option2')">Explorar la Ciudad</button>
-    </div>
-  </div>
+let whale = document.getElementById('whale');
+let gravity = 0.8; // Gravedad que hace que el cachalote caiga
+let jumpStrength = -15; // Fuerza del salto
+let velocity = 0; // Velocidad inicial
+let isJumping = false; // Variable para saber si el cachalote está saltando
+let groundLevel = window.innerHeight - whale.offsetHeight;
 
-  <script>
-    // Aquí se define la historia y las elecciones
-    const story = {
-      start: {
-        text: '¡Bienvenido a Micgth! Tu aventura comienza ahora. ¿Qué decisión tomarás?',
-        options: {
-          option1: 'Ir al Bosque',
-          option2: 'Explorar la Ciudad'
-        }
-      },
-      bosque: {
-        text: 'Te adentras en el bosque. Escuchas sonidos extraños a tu alrededor. De repente, ves una sombra en el arbusto.',
-        options: {
-          option1: 'Investigar la sombra',
-          option2: 'Volver al pueblo'
-        }
-      },
-      ciudad: {
-        text: 'Llegas a la ciudad llena de vida. Las calles están llenas de comerciantes y aventureros.',
-        options: {
-          option1: 'Hablar con el comerciante',
-          option2: 'Entrar en una taberna'
-        }
-      },
-      sombra: {
-        text: 'Te acercas lentamente a la sombra, y de repente aparece un misterioso ser que te ofrece un trato.',
-        options: {
-          option1: 'Aceptar el trato',
-          option2: 'Rechazar el trato'
-        }
-      },
-      taberna: {
-        text: 'En la taberna, un grupo de aventureros te invita a unirte a su misión.',
-        options: {
-          option1: 'Unirte a la misión',
-          option2: 'Rechazar la invitación'
-        }
-      },
-      trato: {
-        text: 'El trato es peligroso, pero podría cambiar tu vida para siempre. Decides...',
-        options: {
-          option1: 'Afrontar el peligro',
-          option2: 'Salir corriendo'
-        }
-      }
-    };
-
-    // Función para mostrar la historia y las opciones basadas en la elección del jugador
-    function makeChoice(choice) {
-      let currentState = story[choice];
-
-      // Actualizar el texto de la historia
-      document.getElementById('story-text').innerText = currentState.text;
-
-      // Actualizar las opciones
-      const buttons = document.querySelectorAll('.button');
-      buttons[0].innerText = currentState.options.option1;
-      buttons[1].innerText = currentState.options.option2;
-
-      // Cambiar el comportamiento de los botones de acuerdo con la elección
-      buttons[0].setAttribute('onclick', `makeChoice('${choice === 'start' ? 'bosque' : 'ciudad'}')`);
-      buttons[1].setAttribute('onclick', `makeChoice('${choice === 'bosque' ? 'sombra' : 'taberna'}')`);
+function gameLoop() {
+  if (isJumping) {
+    velocity += gravity;
+    whale.style.bottom = (parseInt(whale.style.bottom) + velocity) + 'px';
+    
+    // Si el cachalote toca el suelo, se detiene el salto
+    if (parseInt(whale.style.bottom) >= groundLevel) {
+      whale.style.bottom = groundLevel + 'px';
+      isJumping = false;
+      velocity = 0;
     }
+  }
+  requestAnimationFrame(gameLoop);
+}
 
-    // Iniciar el juego desde el estado inicial
-    makeChoice('start');
-  </script>
-</body>
-</html>
+document.addEventListener('keydown', function(event) {
+  if (event.code === 'Space' && !isJumping) {
+    isJumping = true;
+    velocity = jumpStrength;
+  }
+});
+
+// Inicialización
+whale.style.bottom = groundLevel + 'px';
+gameLoop();
