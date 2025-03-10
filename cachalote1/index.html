@@ -1,32 +1,81 @@
-let whale = document.getElementById('whale');
-let gravity = 0.8; // Gravedad que hace que el cachalote caiga
-let jumpStrength = -15; // Fuerza del salto
-let velocity = 0; // Velocidad inicial
-let isJumping = false; // Variable para saber si el cachalote está saltando
-let groundLevel = window.innerHeight - whale.offsetHeight;
-
-function gameLoop() {
-  if (isJumping) {
-    velocity += gravity;
-    whale.style.bottom = (parseInt(whale.style.bottom) + velocity) + 'px';
-    
-    // Si el cachalote toca el suelo, se detiene el salto
-    if (parseInt(whale.style.bottom) >= groundLevel) {
-      whale.style.bottom = groundLevel + 'px';
-      isJumping = false;
-      velocity = 0;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego del Cachalote Saltador</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  }
-  requestAnimationFrame(gameLoop);
-}
 
-document.addEventListener('keydown', function(event) {
-  if (event.code === 'Space' && !isJumping) {
-    isJumping = true;
-    velocity = jumpStrength;
-  }
-});
+    body {
+      background-color: #87CEEB; /* Cielo azul */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-// Inicialización
-whale.style.bottom = groundLevel + 'px';
-gameLoop();
+    #gameContainer {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    #whale {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 60px;
+      background-color: #00008B;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="gameContainer">
+    <div id="whale"></div>
+  </div>
+
+  <script>
+    let whale = document.getElementById('whale');
+    let gravity = 0.8; // Gravedad que hace que el cachalote caiga
+    let jumpStrength = -15; // Fuerza del salto
+    let velocity = 0; // Velocidad inicial
+    let isJumping = false; // Variable para saber si el cachalote está saltando
+    let groundLevel = window.innerHeight - whale.offsetHeight;
+
+    function gameLoop() {
+      if (isJumping) {
+        velocity += gravity;
+        whale.style.bottom = (parseInt(whale.style.bottom) + velocity) + 'px';
+        
+        // Si el cachalote toca el suelo, se detiene el salto
+        if (parseInt(whale.style.bottom) >= groundLevel) {
+          whale.style.bottom = groundLevel + 'px';
+          isJumping = false;
+          velocity = 0;
+        }
+      }
+      requestAnimationFrame(gameLoop);
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'Space' && !isJumping) {
+        isJumping = true;
+        velocity = jumpStrength;
+      }
+    });
+
+    // Inicialización
+    whale.style.bottom = groundLevel + 'px';
+    gameLoop();
+  </script>
+</body>
+</html>
