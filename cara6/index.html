@@ -5,6 +5,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
+     <button onclick="changeBackground();">Canvia Fons</button>
     <script>
        let t = 0;
       // Declara i inicialitza la variable 't', que servirà per crear un moviment suau amb 'noise()'.
@@ -46,7 +47,7 @@ t += 0.01;
   let vol = mic.getLevel(); // Obté el nivell de volum
   let h = map(vol, 0, 1, 0, 300); // Mapeja el volum per fer que la cara pugi o baixi
 
-  background(99+noise3, 255, 71-noise3); // Color de fons
+  background(bgColor); // Color de fons
 
   // Dibuixa la cara
   fill(249, 255 + h, 71); // Color de la cara
@@ -80,6 +81,13 @@ t += 0.01;
    fill(0 + temblar * h / 2, 0, 0); // Color de les pupil·les
   ellipse(mouseX - 70 + h * 3, mouseY - 60 + h * 3, 30, 30); // Pupil·la esquerra
   ellipse(mouseX + 70 + h * 3, mouseY - 60 + h * 3, 30, 30); // Pupil·la dreta
+
+  /* Funció per canviar el color de fons:
+       Utilitza random() per generar components RGB aleatoris dins d'un interval.
+       Aquesta funció es crida en prémer el botó "Canvia Fons". */
+    function changeBackground() {
+      bgColor = color(random(100, 255), random(100, 255), random(100, 255));
+    }
 
 
 }
