@@ -83,7 +83,9 @@ t += 0.01;
    fill(0 + temblar * h / 2, 0, 0); // Color de les pupil·les
   ellipse(mouseX - 70 + h * 3, mouseY - 60 + h * 3, 30, 30); // Pupil·la esquerra
   ellipse(mouseX + 70 + h * 3, mouseY - 60 + h * 3, 30, 30); // Pupil·la dreta
-  
+
+  strokeWeight(5);
+  noFill();
   line(mouseX-100, mouseY-90, mouseX-10, mouseY-10);
 
  /* Funció per canviar el color de fons:
