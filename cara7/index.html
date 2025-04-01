@@ -42,11 +42,13 @@
         ellipse(mouseX, mouseY, 300 + noise1, 300 + noise1);
 
         // Dibuixa la boca
-        fill(209, 37, 0);
+        fill(209, 37, 0); 
         if (smile) {
+          // Boca hacia arriba (sonriente)
           arc(mouseX, mouseY + 90, 100, 50 + h, 0, PI); // Boca cap amunt
         } else {
-          arc(mouseX, mouseY + 90, 100, 50 + h, 0, PI, 0); // Boca cap avall
+          // Boca hacia abajo (triste)
+          arc(mouseX, mouseY + 90, 100, 50 + h, PI, TWO_PI); // Boca cap avall
         }
 
         // Dibuixa la nariz
