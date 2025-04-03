@@ -81,14 +81,14 @@
         mosca (65, 80, 15, 30);
       }
 
-function mosca (x, y, w, z,) {
+function mosca () {
   let posicioX=random (0, 1000);
   let posicioY=random (0, 800);
 fill (255); //color blanc
-  ellipse (x+posicioX, y+posicioY, w, h); //ala esquerra
-  ellipse (x+30+posicioX, y+posicioY, w, h); //ala dreta
+  ellipse (50+posicioX, 50+posicioY, 20, 30); //ala esquerra
+  ellipse (80+posicioX, 50+posicioY, 20, 30); //ala dreta
   fill (0); //això és color negre
-  ellipse (x+15+posicioX, y+posicioY, w+5, h+10);
+  ellipse (65+posicioX, 50+posicioY, 25, 40);
 
 }
       
