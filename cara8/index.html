@@ -81,11 +81,13 @@
       }
 
 function mosca () {
+  let posicioX=random (0, 400);
+  let posicioY=random (0, 200);
 fill (255); //color blanc
-  ellipse (50, 50, 20, 30); //ala esquerra
-  ellipse (80, 50, 20, 30); //ala dreta
+  ellipse (50+posicioX, 50+posicioY, 20, 30); //ala esquerra
+  ellipse (80+posicioX, 50+posicioY, 20, 30); //ala dreta
   fill (0); //això és color negre
-  ellipse (65, 50, 25, 20);
+  ellipse (65+posicioX, 50+posicioY, 25, 20);
 
 }
       
