@@ -77,18 +77,19 @@
         noFill();
         line(mouseX - 100, mouseY - 90, mouseX - 10, mouseY - 10);
 
-        mosca (50, 50, 10, 30);
-        mosca (65, 80, 15, 30);
+        mosca (50, 50, 10, 30); 
+        mosca (65, 80, 20, 40);
       }
 
-function mosca () {
-  let posicioX=random (0, 1200);
-  let posicioY=random (0,800);
+function mosca (posicioX, posicioY, ample, alt) {
+  //ample=20 i alt=30
+ // let posicioX=random (0, 1200);
+  //let posicioY=random (0,800);
 fill (255); //color blanc
-  ellipse (50+posicioX, 50+posicioY, 20, 30); //ala esquerra
-  ellipse (80+posicioX, 50+posicioY, 20, 30); //ala dreta
+  ellipse (50+posicioX, 50+posicioY, ample, alt); //ala esquerra
+  ellipse (80+posicioX, 50+posicioY, ample, alt); //ala dreta
   fill (0); //això és color negre
-  ellipse (65+posicioX, 50+posicioY, 25, 40);
+  ellipse (65+posicioX, 50+posicioY, ample+5, alt+10);
 
 }
       
