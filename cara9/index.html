@@ -1,0 +1,117 @@
+
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js" integrity="sha512-1YMgn4j8cIL91s14ByDGmHtBU6+F8bWOMcF47S0cRO3QNm8SKPNexy4s3OCim9fABUtO++nJMtcpWbINWjMSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+     <button onclick="changeBackground();">Canvia Fons</button>
+    <script>
+let t = 0;
+      let bgColor;
+      let mic;
+      let smile = false;
+      let temblar;
+      let sinus;
+      let cosinus;
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+        mic = new p5.AudioIn(); // Desa l'entrada d'àudio a la variable mic
+        mic.start(); // Activa el micròfon
+        bgColor = color(99, 255, 71);
+      }
+
+      function draw() {
+        t += 0.01;
+
+        let noise1 = noise(t) * 100;
+        let noise2 = noise(t + 100) * 50;
+        let noise3 = noise(t + 200) * 255;
+        temblar = random(10, 50);
+        sinus = sin(frameCount * 0.1);
+        cosinus = sin(frameCount * 0.1);
+        let movsinus = map(sinus, -1, 1, 0, 50);
+        let movcosinus = map(cosinus, -1, 1, 0, 50);
+        let vol = mic.getLevel();
+        let h = map(vol, 0, 1, 0, 300);
+
+        background(bgColor); // Color de fons
+
+        // Dibuixa la cara
+        fill(249, 255 + h, 71);
+        ellipse(mouseX, mouseY, 300 + noise1, 300 + noise1);
+
+        // Dibuixa la boca
+        fill(209, 37, 0); 
+        if (smile) {
+          // Boca hacia arriba (sonriente)
+          arc(mouseX, mouseY + 90, 100, 50 + h, 0, PI); // Boca cap amunt
+        } else {
+          // Boca hacia abajo (triste)
+          arc(mouseX, mouseY + 90, 100, 50 + h, PI, TWO_PI); // Boca cap avall
+        }
+
+        // Dibuixa la nariz
+        fill(243, 233, 23);
+        triangle(
+          mouseX, mouseY - 60 - h * 3,
+          mouseX - 15, mouseY + 20 - h * 3,
+          mouseX + 15, mouseY + 20 - h * 3
+        );
+
+        fill(0, 0, 0); // Color del barret
+        rect(mouseX - 100, mouseY - 170 - h * 3, 200, 50); // Base del barret
+        rect(mouseX - 60, mouseY - 270 - h * 3, 120, 150); // Copa del barret
+
+        // Dibuixa els ulls
+        fill(255 + temblar * h / 4, 255, 255); // Color dels ulls
+        ellipse(mouseX - 70 + h * 3, mouseY - 60 + h * 3, 50, 50 + noise2); // Ull esquerre
+        ellipse(mouseX + 70 + h * 3, mouseY - 60 + h * 3, 50, 50 + noise2); // Ull dret
+
+        fill(0 + temblar * h / 2, 0, 0); // Color de les pupil·les
+        ellipse(mouseX - 70 + h * 3, mouseY - 60 + h * 3, 30, 30); // Pupil·la esquerra
+        ellipse(mouseX + 70 + h * 3, mouseY - 60 + h * 3, 30, 30); // Pupil·la dreta
+
+        strokeWeight(5);
+        noFill();
+        line(mouseX - 90, mouseY - 110, mouseX - 40, mouseY - 110);
+        
+        line(mouseX  +90, mouseY - 110, mouseX + 40, mouseY - 110);
+
+        mosca (50, 50, 10, 30); 
+        mosca (65, 80, 20, 40);
+        mosca (0, 350, 10, 30)
+      }
+
+function mosca (posicioX, posicioY, ample, alt) {
+  //ample=20 i alt=30
+  let randomX=random (0, 400);
+  let randomY=random (0,100);
+fill (255); //color blanc
+  ellipse (50+posicioX+randomX, 50+posicioY+randomY, ample, alt); //ala esquerra
+  ellipse (80+posicioX+randomX, 50+posicioY+randomY, ample, alt); //ala dreta
+  fill (0); //això és color negre
+  ellipse (65+posicioX+randomX, 50+posicioY+randomY, ample+5, alt+10);
+
+}
+      
+      function keyPressed() {
+        if (key === 'S' || key === 's') {
+          smile = !smile;
+        }
+      }
+      
+      // Mueve la función fuera de draw()
+      function changeBackground() {
+        bgColor = color(random(100, 255), random(100, 255), random(100, 255));
+      }
+
+    </script>
+  </body>
+</html>
+
+      // Mueve la función fuera de draw()
+      function changeBackground() {
+        bgColor = color(random(100, 255), random(100, 255), random(100, 255));
+      }
