@@ -151,6 +151,11 @@
     rect(mouseX - 100, mouseY - 170 - h * 3, 200, 50);
     rect(mouseX - 60, mouseY - 270 - h * 3, 120, 150);
 
+    strokeWeight(5);
+      noFill();
+      line(mouseX - 90, mouseY - 110, mouseX - 40, mouseY - 110);
+      line(mouseX + 90, mouseY - 110, mouseX + 40, mouseY - 110);
+
     // Ulls i celles (només quan no parpelleja)
     if (!parpelleig) {
       fill(255 + temblar * h / 4, 255, 255);
@@ -161,10 +166,7 @@
       ellipse(mouseX - 70 + h * 3, mouseY - 60 + h * 3, 30, 30);
       ellipse(mouseX + 70 + h * 3, mouseY - 60 + h * 3, 30, 30);
 
-      strokeWeight(5);
-      noFill();
-      line(mouseX - 90, mouseY - 110, mouseX - 40, mouseY - 110);
-      line(mouseX + 90, mouseY - 110, mouseX + 40, mouseY - 110);
+     
     }
 
     // Mosques
