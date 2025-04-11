@@ -36,7 +36,7 @@ let t = 0;
         let vol = mic.getLevel();
         let h = map(vol, 0, 1, 0, 300);
 
-        background(bgColor); // Color de fons
+        background(); // Color de fons
 
         // Dibuixa la cara
         fill(249, 255 + h, 71);
@@ -106,6 +106,8 @@ fill (255); //color blanc
       function changeBackground() {
         bgColor = color(random(100, 255), random(100, 255), random(100, 255));
       }
+
+      bgColor = color(random(100, 255), random(100, 255), random(100, 255));
 
     </script>
   </body>
