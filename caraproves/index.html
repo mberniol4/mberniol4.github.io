@@ -109,9 +109,6 @@ let t = 0;
         mic.start(); // Activa el micròfon
         bgColor = color(99, 255, 71);
       }
-
-function changeBackground() {
-        bgColor = color(random(100, 255), random(100, 255), random(100, 255));
     
       function draw() {
         t += 0.01;
@@ -174,7 +171,9 @@ function changeBackground() {
         mosca (65, 80, 20, 40);
         mosca (0, 350, 10, 30)
       }
-
+function changeBackground() {
+        bgColor = color(random(100, 255), random(100, 255), random(100, 255));
+        
 function mosca (posicioX, posicioY, ample, alt) {
   //ample=20 i alt=30
   let randomX=random (0, 400);
