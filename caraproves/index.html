@@ -110,6 +110,9 @@ let t = 0;
         bgColor = color(99, 255, 71);
       }
 
+function changeBackground() {
+        bgColor = color(random(100, 255), random(100, 255), random(100, 255));
+    
       function draw() {
         t += 0.01;
 
@@ -191,8 +194,6 @@ fill (255); //color blanc
       }
       
 
-          function changeBackground() {
-        bgColor = color(random(100, 255), random(100, 255), random(100, 255));
       }
 
     </script>
