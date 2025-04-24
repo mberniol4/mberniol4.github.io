@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Indica que el document és HTML5 -->
+<html>
+  <head>
+    <!-- La secció head conté metadades i enllaços a fitxers externs -->
+
+    <meta charset="UTF-8">
+    <!-- Defineix la codificació de caràcters a UTF-8, que suporta accents i símbols especials -->
+
+    <title>Art Geomètric amb Mini Cara i Text Gran </title>
+    <!-- Defineix el títol de la pàgina que apareixerà a la pestanya del navegador -->
+
+    <!-- Llibreries necessàries: s'inclouen des de servidors externs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.js"></script>
+    <!-- Aquesta és la biblioteca p5.js, que facilita la creació de gràfics i animacions en el navegador -->
+
+    <script src="https://cdn.jsdelivr.net/gh/ml5js/Intro-ML-Arts-IMA@ml5-build-10-7-19/ml5_build/ml5.min.js"></script>
+    <!-- Aquesta és la biblioteca ml5.js, que ens permet utilitzar models d'intel·ligència artificial com la detecció facial -->
+
+    <style>
+      /* Inici del codi CSS per donar estil a la pàgina */
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        /* Fons de color gris clar */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* La pàgina està centrada i es distribueixen els elements en columna */
+      }
+
+      /* Estils per a la pantalla de càrrega que es mostra abans que es carreguin els models */
+      #loading-screen {
+        position: fixed;
+        /* La pantalla de càrrega es manté fixa en tot moment a la finestra del navegador */
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.9);
+        /* Fons blanc amb lleugera transparència */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* Centra el contingut de la pantalla (loader i text) */
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        color: #333;
+        /* Text en gris fosc per a bona llegibilitat */
+        z-index: 10;
+        /* Es col·loca per sobre de tot el contingut (amb un índex z alt) */
+      }
+
+      .loader {
+        width: 50px;
+        height: 50px;
+        border: 6px solid #3498db;
+        /* Marge de 6 píxels de groosor amb color blau (part de la vora)*/
+        border-top: 6px solid transparent;
+        /* La part superior és transparent per fer l'efecte giratori */
+        border-radius: 50%;
+        /* Fa el loader circular */
+        animation: spin 1s linear infinite;
+        /* Aplica una animació que fa girar l'element indefinidament */
+        margin-bottom: 10px;
+      }
+
+      /* Declaració de la keyframe de l'animació per girar l'element loader */
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      /* Fi de l'estil CSS */
+      </style>
+  </head>
+  <body>
+    <!-- Cos del document: aquí es col·loca el contingut visible a la pàgina -->
+
+    <!-- Pantalla de càrrega: s'exhibeix mentre es carreguen els models de detecció facial -->
+    <div id="loading-screen">
+      <div class="loader"></div>
+      <!-- Element visual que gira per mostrar que s'està carregant -->
+      <p>Carregant models, si us plau, espera...</p>
+      <!-- Missatge per informar a l'usuari que s'està carregant el model -->
+    </div>
+
+    <script>
+      /*Inici del codi JavaScript */
+
+      // Declarem variables globals utilitzades en el codi
+      let faceapi;
+      // Aquesta variable emmagatzemarà el model de detecció facial de ml5.js
+
+      let detections=[];
+      // Array on es guarden els resultats (deteccions) que ens proporciona el model facial
+      
+    
+  
+        
+    
