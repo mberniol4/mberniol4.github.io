@@ -158,6 +158,87 @@
         detections = result;
         // Guarda el resultat de les deteccions (poden ser múltiples cares, però en aquest cas s'utilitza la primera)
 
+        if (!modelsMostrats) {
+          // Si encara no s'ha amagat la pantalla càrrega...
+          document.getElementByld("loading-screen").style.display = "none";
+          // ...amaguem l'element amb id "loading-screen"
+          modelsMostrats = true;
+          // Actualitzem la variable perquè no es torni a amagar més tard (ja ho hem fet)
+        }
+
+        // Torna a iniciar la detecció facial de forma contínua
+        faceapi.detect(gotFaces);
+      }
+
+      // Funció draw de p5.js, s'executa moltes vegades per segon per actualitzar la pantalla
+      function draw() {
+        // Es pinta el fons de color blanc cada vegada que es redibuixa el canvas
+        background(255);
+
+        // Variables per emmagatzemar el sentiment (expressió facial) i la seva intensitat
+        let dominant = "neutre";
+        let intensityc = 0;
+
+        // Si hi ha deteccions i almenys una cara
+        if (detections && detections.length > 0) {
+          // Es recuperen les expressions facials de la primera detecció
+          let expr = detections[0].expressions;
+          // Es determina quina és l'expresssió dominant (amb més probabilitat) comparant els valors
+          dominant = Object.keys(expr).reduce((a, b) => expr[a] > expr[b] ? a : b);
+          // També s'extreu la intensitat de l'expressió dominant
+          intensity = expr[dominant];
+        }
+
+        // Es dibuixa art geomètric diferent segons el sentiment detectat
+        drawDifferentArt(dominant, intensity);
+
+        // Dibuixa un text amb el nom de l'expressió facial a la part superior del canvas
+        noStroke();
+        fill(44, 169, 225);
+        textSize(48);
+        textAlign(CENTER, CENTER)
+
+        text("Expressió:" + dominant, width/2, 50);
+        // "width/2" centra el text horitzontalment i "50" és la coordenada vertical
+
+        // Dibuixa una mini imatge de la cara a la part inferior dreta del canvas
+        if (detections && detections.length > 0) {
+          // Es fa servir la imatge del vídeo capturat per representar la cara
+          image(video, width - miniWidth - 20, height - miniHeight - 20, miniWidth, miniHeight);
+        }
+      }
+
+      // Funció per dibuixar art geomètric en funció de l'expressió facial detectada
+      function drawDifferentArt(dominant, intensity) {
+        push();
+        // Guarda l'estat actual de les transformacions gràfiques
+
+        translate(width/2, height/2);
+        // Trasllada l'origen del sistema de coordenades al centre del canvas
+
+        noFill();
+        // Es desactiva el farcit (no es pinta de color les formes interiors)
+
+        strokeWeight(4);
+        // Defineix l'amplada del traç (línia de dibuix) en 4 píxels
+
+        // Utilitza una estructura switch per triar el dibuix en funció del sentiment destacat
+        switch (dominant) {
+          case "happy":
+            // Cas: expressió "happy" (feliç) -> es dibuixen ones radials
+            for (let i = 1; i <= 10; i++) {
+              // Es recorre des de 1 fins a 10 per dibuixar cercles creixents
+              stroke(random(200,255), random(200,255), 0, 150);
+              // Cada cercle té un traç amb tonalitats grogues (el color és aleatori entre 200 i 255 per vermell i verd)
+              ellipse(0, 0, i * 20 * intensity, i * 20 * intensity);
+              // Dibuixa una ellipse centrada, amb mida en funció del número d'iteració i la intensitat de l'expressió
+            }
+            break;
+          case "sad":
+            // Cas: expressió "sad" (trist) -> es dibuixen línies verticals
+            stroke(50, 100, 200, 150);
+        
+
         
 
 
