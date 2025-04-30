@@ -252,6 +252,31 @@
             for (let x = -250; x <= 250; x += 20) {
               // Recorre l'eix X des de -250 fins a 250 amb increments de 20 píxels
               let y = (x % 40 === 0) ? -150 : 150;
+              // Alterna el valor de y entre -150 i 150 per crear efecte zigzag (la condició mira si x és múltiple de 40)
+              vertex(x,y * intensity);
+              // Es posa un punt a la forma amb la coordenada (x, y ajustada per la intensitat)
+            }
+            endShape();
+            // Acaba la definició de la forma complexa
+            break;
+          case "fearful":
+            // Cas: expressió "fearful" (por) -> dibuixa una línia ondulada
+            stroke(100, 100, 100, 150);
+            // Traç de color gris amb transparència
+            beginShape();
+            for (let x = -250; x <= 250; x += 10) {
+              // Recorre l'eix X des de -250 fins a 250, amb increments de 10 píxels
+              let y = 50 * sin(x * 0.1 * intensity);
+              // Calcula la coordenada y com la funció sinus per crear l'efecte ondulat (multiplicant per 50 i l'intensitat)
+              vertex(x, y);
+              // Afegeix aquest punt a la forma ondulada
+            }
+            endShape();
+            break;
+          case "surprised";
+            // Cas: expressió "surprised" (sobtada) -> cercles concèntrics amb petites variacions
+            stroke(0, 150, 255, 150);
+            // Traç de color blau clar amb transparència
         
 
         
