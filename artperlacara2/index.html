@@ -136,218 +136,236 @@
 
       switch (dominant) {
           case "happy":
-            fill(127, 49, 248-intensity*248);
-            beginShape();//I llavi abaix dreta (lila fosc)
-vertex(480, 521.1875);
-vertex(480, 556.1875);
-vertex(475, 564.1875);
-vertex(467, 570.1875);
-vertex(460, 573.1875);
-vertex(356, 572.1875);
-vertex(357, 548.1875);
-vertex(446, 547.1875);
-vertex(454, 545.1875);
-vertex(480, 522.1875);
-endShape();//F llavi abaix dreta (lila fosc)
+ fill(146, 89, 132);
+  beginShape(); // llavi abaix dreta (lila)
+  vertex(480, 521.1875);
+  vertex(480, 556.1875);
+  vertex(475, 564.1875);
+  vertex(467, 570.1875);
+  vertex(460, 573.1875);
+  vertex(356, 572.1875);
+  vertex(357, 548.1875);
+  vertex(446, 547.1875);
+  vertex(454, 545.1875);
+  vertex(480, 522.1875);
+  endShape();
+
+  fill(167, 122, 153);
+  beginShape(); // llavi abaix esquerra (lila clar)
+  vertex(356, 573.1875);
+  vertex(306, 573.1875);
+  vertex(297, 569.1875);
+  vertex(289, 562.1875);
+  vertex(285, 555.1875);
+  vertex(285, 521.1875);
+  vertex(311, 545.1875);
+  vertex(317, 547.1875);
+  vertex(356, 548.1875);
+  vertex(356, 571.1875);
+  endShape();
+
+  fill(97, 186, 190);
+  beginShape(); // llavi centre/abaix dreta (turquesa)
+  vertex(479, 521.1875);
+  vertex(453, 545.1875);
+  vertex(445, 547.1875);
+  vertex(402, 547.1875);
+  vertex(403, 520.1875);
+  vertex(479, 521.1875);
+  endShape();
+
+  fill(170, 217, 211);
+  beginShape(); // llavi centre/abaix centre (turquesa fluix)
+  vertex(357, 520.1875);
+  vertex(402, 520.1875);
+  vertex(402, 547.1875);
+  vertex(357, 548.1875);
+  vertex(357, 522.1875);
+  vertex(357, 520.1875);
+  endShape();
+
+  fill(132, 211, 205);
+  beginShape(); // llavi centre/abaix esquerre (turquesa)
+  vertex(356, 547.1875);
+  vertex(317, 548.1875);
+  vertex(308, 543.1875);
+  vertex(286, 521.1875);
+  vertex(357, 520.1875);
+  vertex(356, 548.1875);
+  endShape();
+
+  fill(22, 44, 67);
+  beginShape(); // llavi centre/dalt (blau fosc)
+  vertex(449, 519.1875);
+  vertex(427, 504.1875);
+  vertex(410, 498.1875);
+  vertex(398, 499.1875);
+  vertex(378, 504.1875);
+  vertex(357, 498.1875);
+  vertex(343, 502.1875);
+  vertex(314, 519.1875);
+  vertex(448, 520.1875);
+  endShape();
+
+  fill(145, 90, 132);
+  beginShape(); // llavi dalt dreta (lila)
+  vertex(479, 519.1875);
+  vertex(431, 484.1875);
+  vertex(413, 473.1875);
+  vertex(402, 469.1875);
+  vertex(390, 471.1875);
+  vertex(379, 481.1875);
+  vertex(379, 503.1875);
+  vertex(389, 501.1875);
+  vertex(398, 499.1875);
+  vertex(408, 498.1875);
+  vertex(416, 500.1875);
+  vertex(425, 504.1875);
+  vertex(450, 520.1875);
+  vertex(479, 520.1875);
+  endShape();
+
+  fill(253, 241, 181);
+  beginShape(); // llavi dalt dreta (groc)
+  vertex(379, 503.1875);
+  vertex(379, 481.1875);
+  vertex(370, 474.1875);
+  vertex(362, 471.1875);
+  vertex(357, 471.1875);
+  vertex(357, 498.1875);
+  vertex(378, 505.1875);
+  endShape();
+
+  fill(168, 122, 151);
+  beginShape(); // llavi dalt dreta gran (lila)
+  vertex(356, 498.1875);
+  vertex(356, 471.1875);
+  vertex(345, 476.1875);
+  vertex(333, 483.1875);
+  vertex(323, 492.1875);
+  vertex(303, 506.1875);
+  vertex(303, 520.1875);
+  vertex(313, 519.1875);
+  vertex(328, 511.1875);
+  vertex(338, 505.1875);
+  vertex(355, 498.1875);
+  endShape();
+
+  fill(142, 95, 132);
+  beginShape(); // llavi dalt esquerra petit (lila)
+  vertex(302, 507.1875);
+  vertex(287, 520.1875);
+  vertex(303, 520.1875);
+  vertex(303, 508.1875);
+  endShape();
+
+  //color
   
-  beginShape();//I llavi abaix esquerra (lila clar)
-vertex(356, 573.1875);
-vertex(306, 573.1875);
-vertex(297, 569.1875);
-vertex(289, 562.1875);
-vertex(285, 555.1875);
-vertex(285, 521.1875);
-vertex(311, 545.1875);
-vertex(317, 547.1875);
-vertex(356, 548.1875);
-vertex(356, 571.1875);
-endShape();//F llavi abaix esquerra (lila clar)
+  fill(255, 240, 170);
+  beginShape(); // barbeta centre (groc fluix)
+  vertex(402, 602.1875);
+  vertex(357, 603.1875);
+  vertex(357, 574.1875);
+  vertex(402, 573.1875);
+  vertex(402, 603.1875);
+  endShape();
+
+  fill(255, 160, 0);
+  beginShape(); // barbeta centre/esquerre (taronja)
+  vertex(402, 573.1875);
+  vertex(412, 573.1875);
+  vertex(412, 627.1875);
+  vertex(353, 627.1875);
+  vertex(339, 627.1875);
+  vertex(328, 624.1875);
+  vertex(317, 619.1875);
+  vertex(309, 613.1875);
+  vertex(304, 605.1875);
+  vertex(303, 598.1875);
+  vertex(303, 590.1875);
+  vertex(303, 572.1875);
+  vertex(357, 573.1875);
+  vertex(357, 602.1875);
+  vertex(402, 603.1875);
+  vertex(402, 574.1875);
+  endShape();
+
+  fill(200, 150, 255);
+  beginShape(); // barbeta centre/dreta (lila fluix)
+  vertex(413, 626.1875);
+  vertex(438, 619.1875);
+  vertex(438, 573.1875);
+  vertex(413, 573.1875);
+  vertex(412, 626.1875);
+  endShape();
+
+  fill(180, 100, 180);
+  beginShape(); // barbeta baix/dreta (lila)
+  vertex(438, 619.1875);
+  vertex(438, 642.1875);
+  vertex(428, 645.1875);
+  vertex(418, 647.1875);
+  vertex(409, 649.1875);
+  vertex(400, 650.1875);
+  vertex(392, 650.1875);
+  vertex(387, 651.1875);
+  vertex(387, 628.1875);
+  vertex(411, 628.1875);
+  vertex(422, 624.1875);
+  vertex(431, 621.1875);
+  vertex(437, 620.1875);
+  endShape();
+
+  fill(0, 255, 255);
+  beginShape(); // barbeta baix/esquerra (turquesa)
+  vertex(387, 628.1875);
+  vertex(386, 650.1875);
+  vertex(370, 651.1875);
+  vertex(356, 649.1875);
+  vertex(344, 648.1875);
+  vertex(334, 645.1875);
+  vertex(321, 642.1875);
+  vertex(310, 636.1875);
+  vertex(300, 628.1875);
+  vertex(293, 618.1875);
+  vertex(288, 609.1875);
+  vertex(285, 599.1875);
+  vertex(284, 583.1875);
+  vertex(285, 555.1875);
+  vertex(289, 562.1875);
+  vertex(295, 567.1875);
+  vertex(301, 572.1875);
+  vertex(304, 573.1875);
+  vertex(303, 600.1875);
+  vertex(305, 606.1875);
+  vertex(310, 613.1875);
+  vertex(316, 618.1875);
+  vertex(323, 623.1875);
+  vertex(332, 626.1875);
+  vertex(341, 627.1875);
+  vertex(352, 628.1875);
+  vertex(365, 627.1875);
+  vertex(387, 628.1875);
+  endShape();
+
+  fill(255, 100, 200);
+  beginShape(); // barbeta baix/dreta (rosa)
+  vertex(481, 625.1875);
+  vertex(469, 631.1875);
+  vertex(458, 635.1875);
+  vertex(447, 640.1875);
+  vertex(439, 641.1875);
+  vertex(440, 574.1875);
+  vertex(460, 573.1875);
+  vertex(467, 570.1875);
+  vertex(472, 566.1875);
+  vertex(477, 559.1875);
+  vertex(480, 556.1875);
+  vertex(480, 626.1875);
+  endShape();
   
-  beginShape(); //I llavi centre/abaix dreta (turquesa)
-vertex(479, 521.1875);
-vertex(453, 545.1875);
-vertex(445, 547.1875);
-vertex(402, 547.1875);
-vertex(403, 520.1875);
-vertex(479, 521.1875);
-endShape(); //F llavi centre/abaix dreta (turquesa)
-  
-  beginShape(); //I llavi centre/abaix centre (turquesa fluix)
-vertex(357, 520.1875);
-vertex(402, 520.1875);
-vertex(402, 547.1875);
-vertex(357, 548.1875);
-vertex(357, 522.1875);
-vertex(357, 520.1875);
-endShape(); //F llavi centre/abaix centre (turquesa fluix)
-  
-  beginShape(); //I llavi centre/abaix esquerre (turquesa)
-vertex(356, 547.1875);
-vertex(317, 548.1875);
-vertex(308, 543.1875);
-vertex(286, 521.1875);
-vertex(357, 520.1875);
-vertex(356, 548.1875);
-endShape(); //F llavi centre/abaix esquerre (turquesa)
-  
-  beginShape(); //I llavi centre/dalt (blau fosc)
-vertex(449, 519.1875);
-vertex(427, 504.1875);
-vertex(410, 498.1875);
-vertex(398, 499.1875);
-vertex(378, 504.1875);
-vertex(357, 498.1875);
-vertex(343, 502.1875);
-vertex(314, 519.1875);
-vertex(448, 520.1875);
-endShape(); //F llavi centre/dalt (blau fosc)
-  
-  beginShape(); //I llavi dalt esquerre (lila)
-vertex(479, 519.1875);
-vertex(431, 484.1875);
-vertex(413, 473.1875);
-vertex(402, 469.1875);
-vertex(390, 471.1875);
-vertex(379, 481.1875);
-vertex(379, 503.1875);
-vertex(389, 501.1875);
-vertex(398, 499.1875);
-vertex(408, 498.1875);
-vertex(416, 500.1875);
-vertex(425, 504.1875);
-vertex(450, 520.1875);
-vertex(479, 520.1875);
-endShape(); //F llavi dalt esquerre (lila)
-  
-  beginShape(); //I llavi dalt dreta (groc)
-vertex(379, 503.1875);
-vertex(379, 481.1875);
-vertex(370, 474.1875);
-vertex(362, 471.1875);
-vertex(357, 471.1875);
-vertex(357, 498.1875);
-vertex(378, 505.1875);
-endShape(); //F llavi dalt dreta (groc)
-  
-  beginShape(); //I llavi dalt dreta gran (lila)
-vertex(356, 498.1875);
-vertex(356, 471.1875);
-vertex(345, 476.1875);
-vertex(333, 483.1875);
-vertex(323, 492.1875);
-vertex(303, 506.1875);
-vertex(303, 520.1875);
-vertex(313, 519.1875);
-vertex(328, 511.1875);
-vertex(338, 505.1875);
-vertex(355, 498.1875);
-endShape(); //F llavi dalt dreta gran (lila)
-  
-  beginShape(); //I llavi dalt dreta petit (lila)
-vertex(302, 507.1875);
-vertex(287, 520.1875);
-vertex(303, 520.1875);
-vertex(303, 508.1875);
-endShape(); //F llavi dalt dreta petit (lila)
-  
-  beginShape(); //I barbeta centre (groc fluix)
-vertex(402, 602.1875);
-vertex(357, 603.1875);
-vertex(357, 574.1875);
-vertex(402, 573.1875);
-vertex(402, 603.1875);
-endShape(); //F barbeta centre (groc fluix)
-  
-  beginShape(); //I barbeta centre/esquerre (taronja)
-vertex(402, 573.1875);
-vertex(412, 573.1875);
-vertex(412, 627.1875);
-vertex(353, 627.1875);
-vertex(339, 627.1875);
-vertex(328, 624.1875);
-vertex(317, 619.1875);
-vertex(309, 613.1875);
-vertex(304, 605.1875);
-vertex(303, 598.1875);
-vertex(303, 590.1875);
-vertex(303, 572.1875);
-vertex(357, 573.1875);
-vertex(357, 602.1875);
-vertex(402, 603.1875);
-vertex(402, 574.1875);
-endShape(); //F barbeta centre/esquerre (taronja)
-  
-  beginShape(); //I barbeta centre/dreta (lila fluix)
-vertex(413, 626.1875);
-vertex(438, 619.1875);
-vertex(438, 573.1875);
-vertex(413, 573.1875);
-vertex(412, 626.1875);
-endShape(); //F barbeta centre/dreta (lila fluix)
-  
-  beginShape(); //I barbeta baix/dreta (lila)
-vertex(438, 619.1875);
-vertex(438, 642.1875);
-vertex(428, 645.1875);
-vertex(418, 647.1875);
-vertex(409, 649.1875);
-vertex(400, 650.1875);
-vertex(392, 650.1875);
-vertex(387, 651.1875);
-vertex(387, 628.1875);
-vertex(411, 628.1875);
-vertex(422, 624.1875);
-vertex(431, 621.1875);
-vertex(437, 620.1875);
-endShape(); //F barbeta baix/dreta (lila)
-  
-  beginShape(); //I barbeta baix/esquerra (turquesa)
-vertex(387, 628.1875);
-vertex(386, 650.1875);
-vertex(370, 651.1875);
-vertex(356, 649.1875);
-vertex(344, 648.1875);
-vertex(334, 645.1875);
-vertex(321, 642.1875);
-vertex(310, 636.1875);
-vertex(300, 628.1875);
-vertex(293, 618.1875);
-vertex(288, 609.1875);
-vertex(285, 599.1875);
-vertex(284, 583.1875);
-vertex(285, 555.1875);
-vertex(289, 562.1875);
-vertex(295, 567.1875);
-vertex(301, 572.1875);
-vertex(304, 573.1875);
-vertex(303, 600.1875);
-vertex(305, 606.1875);
-vertex(310, 613.1875);
-vertex(316, 618.1875);
-vertex(323, 623.1875);
-vertex(332, 626.1875);
-vertex(341, 627.1875);
-vertex(352, 628.1875);
-vertex(365, 627.1875);
-vertex(387, 628.1875);
-endShape(); //F barbeta baix/esquerra (turquesa)
-  
-  beginShape(); //I barbeta baix/dreta (rosa)
-vertex(481, 625.1875);
-vertex(469, 631.1875);
-vertex(458, 635.1875);
-vertex(447, 640.1875);
-vertex(439, 641.1875);
-vertex(440, 574.1875);
-vertex(460, 573.1875);
-vertex(467, 570.1875);
-vertex(472, 566.1875);
-vertex(477, 559.1875);
-vertex(480, 556.1875);
-vertex(480, 626.1875);
-endShape(); //F barbeta baix/dreta (rosa)
-  
-  beginShape(); //I galta dreta (taronja)
+  fill(255, 152, 0);
+beginShape(); // galta dreta (taronja)
 vertex(481, 625.1875);
 vertex(495, 618.1875);
 vertex(511, 608.1875);
@@ -364,9 +382,10 @@ vertex(574, 348.1875);
 vertex(574, 365.1875);
 vertex(481, 367.1875);
 vertex(480, 625.1875);
-endShape(); //F galta dreta (taronja)
-  
-  beginShape(); //I galta dreta (groc)
+endShape();
+
+fill(255, 235, 59);
+beginShape(); // galta dreta (groc)
 vertex(462, 505.1875);
 vertex(480, 519.1875);
 vertex(481, 366.1875);
@@ -387,9 +406,10 @@ vertex(460, 437.1875);
 vertex(462, 444.1875);
 vertex(462, 449.1875);
 vertex(463, 505.1875);
-endShape(); //F galta dreta (groc)
-  
-  beginShape(); //I galta dreta petita (taronja)
+endShape();
+
+fill(255, 152, 0);
+beginShape(); // galta dreta petita (taronja)
 vertex(480, 365.1875);
 vertex(447, 365.1875);
 vertex(448, 299.1875);
@@ -399,9 +419,10 @@ vertex(471, 305.1875);
 vertex(477, 306.1875);
 vertex(480, 307.1875);
 vertex(480, 365.1875);
-endShape(); //F galta dreta petita (taronja)
-  
-  beginShape(); //I galta dreta (groc fluix)
+endShape();
+
+fill(255, 241, 118);
+beginShape(); // galta dreta (groc fluix)
 vertex(574, 366.1875);
 vertex(574, 349.1875);
 vertex(602, 321.1875);
@@ -421,9 +442,10 @@ vertex(495, 333.1875);
 vertex(481, 335.1875);
 vertex(481, 366.1875);
 vertex(574, 367.1875);
-endShape(); //F galta dreta (groc fluix)
-  
-  beginShape(); //I ullera dreta (groc)
+endShape();
+
+fill(255, 235, 59);
+beginShape(); // ullera dreta (groc)
 vertex(481, 308.1875);
 vertex(481, 335.1875);
 vertex(489, 333.1875);
@@ -449,16 +471,18 @@ vertex(526, 305.1875);
 vertex(513, 307.1875);
 vertex(500, 307.1875);
 vertex(481, 307.1875);
-endShape(); //F ullera dreta (groc)
-  
-  beginShape(); //I bigoti petit (taronja)
+endShape();
+
+fill(255, 152, 0);
+beginShape(); // bigoti petit (taronja)
 vertex(304, 505.1875);
 vertex(303, 497.1875);
 vertex(314, 497.1875);
 vertex(303, 505.1875);
-endShape(); //F bigoti petit (taronja)
-  
-  beginShape(); //I bigoti (groc)
+endShape();
+
+fill(255, 235, 59);
+beginShape(); // bigoti (groc)
 vertex(314, 497.1875);
 vertex(345, 476.1875);
 vertex(351, 472.1875);
@@ -471,9 +495,10 @@ vertex(310, 477.1875);
 vertex(305, 487.1875);
 vertex(303, 496.1875);
 vertex(314, 496.1875);
-endShape(); //F bigoti (groc)
-  
-  beginShape(); //I bigoti (taronja)
+endShape();
+
+fill(255, 152, 0); // taronja
+beginShape(); // bigoti (taronja)
 vertex(462, 505.1875);
 vertex(462, 447.1875);
 vertex(458, 435.1875);
@@ -501,9 +526,10 @@ vertex(414, 473.1875);
 vertex(421, 477.1875);
 vertex(434, 485.1875);
 vertex(462, 505.1875);
-endShape(); //F bigoti (taronja)
-  
-  beginShape(); //I bigoti esquerre (blau fosc)
+endShape();
+
+fill(25, 42, 86);
+beginShape(); // bigoti esquerre (blau fosc)
 vertex(357, 463.1875);
 vertex(356, 445.1875);
 vertex(319, 426.1875);
@@ -511,9 +537,10 @@ vertex(318, 468.1875);
 vertex(324, 465.1875);
 vertex(331, 463.1875);
 vertex(357, 463.1875);
-endShape(); //F bigoti esquerre (blau fosc)
-  
-  beginShape(); //I bigoti centre (blau fosc)
+endShape();
+
+fill(25, 42, 86);
+beginShape(); // bigoti centre (blau fosc)
 vertex(364, 459.1875);
 vertex(364, 444.1875);
 vertex(368, 439.1875);
@@ -528,9 +555,10 @@ vertex(374, 469.1875);
 vertex(368, 464.1875);
 vertex(364, 459.1875);
 vertex(364, 454.1875);
-endShape(); //F bigoti centre (blau fosc)
-  
-  beginShape(); //I bigoti esquerre (turquesa)
+endShape();
+
+fill(0, 206, 209);
+beginShape(); // bigoti esquerre (turquesa)
 vertex(285, 496.1875);
 vertex(303, 496.1875);
 vertex(304, 490.1875);
@@ -540,9 +568,10 @@ vertex(318, 468.1875);
 vertex(317, 419.1875);
 vertex(285, 451.1875);
 vertex(284, 496.1875);
-endShape(); //F bigoti esquerre (turquesa)
-  
-  beginShape(); //I galta mig/baix esquerre (blau fosc)
+endShape();
+
+fill(25, 42, 86);
+beginShape(); // galta mig/baix esquerre (blau fosc)
 vertex(302, 505.1875);
 vertex(286, 520.1875);
 vertex(262, 520.1875);
@@ -551,9 +580,10 @@ vertex(285, 452.1875);
 vertex(285, 496.1875);
 vertex(303, 497.1875);
 vertex(302, 505.1875);
-endShape(); //F galta mig/baix esquerre (blau fosc)
-  
-  beginShape();//I galta baix esquerre (blau fosc)
+endShape();
+
+fill(25, 42, 86);
+beginShape(); // galta baix esquerre (blau fosc)
 vertex(285, 521.1875);
 vertex(263, 520.1875);
 vertex(262, 608.1875);
@@ -565,9 +595,10 @@ vertex(292, 618.1875);
 vertex(288, 606.1875);
 vertex(285, 595.1875);
 vertex(285, 522.1875);
-endShape(); //F galta baix esquerre (blau fosc)
-  
-  beginShape(); //I galta mig/alt (blau fosc)
+endShape();
+
+fill(25, 42, 86);
+beginShape(); // galta mig/alt (blau fosc)
 vertex(216, 468.1875);
 vertex(216, 446.1875);
 vertex(213, 430.1875);
@@ -582,9 +613,10 @@ vertex(137, 339.1875);
 vertex(136, 405.1875);
 vertex(154, 467.1875);
 vertex(216, 469.1875);
-endShape(); //F galta mig/alt (blau fosc)
-  
-  beginShape(); //I galta esquerra (groc)
+endShape();
+
+fill(255, 235, 59);
+beginShape(); // galta esquerra (groc)
 vertex(318, 419.1875);
 vertex(284, 451.1875);
 vertex(218, 384.1875);
@@ -614,9 +646,10 @@ vertex(324, 335.1875);
 vertex(319, 341.1875);
 vertex(318, 346.1875);
 vertex(318, 419.1875);
-endShape(); //F galta esquerra (groc)
-  
-  beginShape(); //I galta mig esquerra (blau clar)
+endShape();
+
+fill(100, 181, 246);
+beginShape(); // galta mig esquerra (blau clar)
 vertex(261, 429.1875);
 vertex(262, 493.1875);
 vertex(219, 492.1875);
@@ -630,9 +663,10 @@ vertex(193, 361.1875);
 vertex(218, 361.1875);
 vertex(218, 383.1875);
 vertex(261, 429.1875);
-endShape(); //F galta mig esquerra (blau clar)
+endShape();
   
-  beginShape(); //I galta dreta (rosa)
+  fill(254, 117, 124);
+  beginShape(); // galta dreta (rosa)
 vertex(548, 467.1875);
 vertex(548, 421.1875);
 vertex(529, 440.1875);
@@ -640,8 +674,11 @@ vertex(521, 449.1875);
 vertex(514, 460.1875);
 vertex(512, 468.1875);
 vertex(547, 468.1875);
-endShape(); //F galta dreta (rosa)
+endShape(); 
   
+  //color
+  
+  fill(89, 182, 172);
   beginShape(); //I galta dreta (turquesa)
 vertex(512, 468.1875);
 vertex(624, 468.1875);
@@ -655,8 +692,9 @@ vertex(553, 583.1875);
 vertex(536, 595.1875);
 vertex(512, 609.1875);
 vertex(512, 468.1875);
-endShape(); //F galta dreta (turquesa)
+endShape();
   
+  fill(146, 89, 132);
   beginShape(); //I galta dreta (lila)
 vertex(575, 467.1875);
 vertex(624, 468.1875);
@@ -667,8 +705,9 @@ vertex(585, 435.1875);
 vertex(578, 445.1875);
 vertex(575, 453.1875);
 vertex(574, 467.1875);
-endShape(); //F galta dreta (lila)
+endShape();
   
+  fill(14, 128, 138);
  beginShape(); //I galta dreta (blau fosc)
 vertex(574, 468.1875);
 vertex(549, 468.1875);
@@ -687,8 +726,9 @@ vertex(640, 363.1875);
 vertex(580, 441.1875);
 vertex(576, 452.1875);
 vertex(574, 468.1875);
-endShape(); //F galta dreta (blau fosc)
+endShape();
   
+  fill(254, 117, 125);
   beginShape(); //I galta esquerra gran (rosa)
 vertex(261, 607.1875);
 vertex(262, 520.1875);
@@ -704,16 +744,18 @@ vertex(212, 570.1875);
 vertex(230, 585.1875);
 vertex(245, 595.1875);
 vertex(262, 607.1875);
-endShape(); //F galta esquerra gran (rosa)
+endShape();
   
-  beginShape(); //I galta dreta (lila)
+  fill(168, 122, 151);
+  beginShape(); //I galta esquerra (lila)
 vertex(219, 494.1875);
 vertex(261, 494.1875);
 vertex(261, 520.1875);
 vertex(218, 520.1875);
 vertex(218, 494.1875);
-endShape(); //F galta dreta (lila)
+endShape();
   
+  fill(253, 118, 125);
   beginShape(); //I galta esquerra petita (rosa)
 vertex(192, 398.1875);
 vertex(192, 360.1875);
@@ -728,8 +770,9 @@ vertex(141, 348.1875);
 vertex(147, 358.1875);
 vertex(153, 364.1875);
 vertex(192, 398.1875);
-endShape(); //F galta esquerra petita (rosa)
+endShape();
   
+  fill(255, 167, 104);
   beginShape(); //I galta esquerra (taronja fluix)
 vertex(217, 340.1875);
 vertex(218, 360.1875);
@@ -743,8 +786,9 @@ vertex(168, 280.1875);
 vertex(173, 288.1875);
 vertex(192, 313.1875);
 vertex(216, 339.1875);
-endShape(); //F galta esquerra (taronja fluix)
+endShape();
   
+  fill(229, 130, 62);
   beginShape(); //I galta esquerra (taronja fort)
 vertex(193, 277.1875);
 vertex(193, 312.1875);
@@ -762,8 +806,9 @@ vertex(220, 301.1875);
 vertex(210, 296.1875);
 vertex(201, 289.1875);
 vertex(193, 278.1875);
-endShape(); //F galta esquerra (taronja fort)
+endShape();
   
+  fill(146, 89, 130);
   beginShape(); //I ullera esquerra (lila)
 vertex(192, 276.1875);
 vertex(192, 311.1875);
@@ -775,8 +820,9 @@ vertex(161, 266.1875);
 vertex(167, 269.1875);
 vertex(175, 271.1875);
 vertex(191, 275.1875);
-endShape(); //F ullera esquerra (lila)
+endShape();
   
+  fill(15, 127, 139);
   beginShape(); //I ullera esquerra (blau)
 vertex(284, 287.1875);
 vertex(284, 305.1875);
@@ -794,8 +840,9 @@ vertex(240, 291.1875);
 vertex(252, 291.1875);
 vertex(263, 290.1875);
 vertex(283, 286.1875);
-endShape(); //F ullera esquerra (blau)
+endShape();
   
+  fill(87, 183, 172);
   beginShape(); //I ullera esquerra (blau fluix)
 vertex(303, 279.1875);
 vertex(325, 279.1875);
@@ -807,8 +854,9 @@ vertex(285, 306.1875);
 vertex(285, 287.1875);
 vertex(292, 284.1875);
 vertex(303, 280.1875);
-endShape(); //F ullera esquerra (blau fluix)
+endShape();
   
+  fill(255, 162, 105);
   beginShape(); //I ullera esquerra (taronja)
 vertex(303, 279.1875);
 vertex(236, 279.1875);
@@ -822,8 +870,9 @@ vertex(260, 291.1875);
 vertex(274, 289.1875);
 vertex(289, 286.1875);
 vertex(303, 279.1875);
-endShape(); //F ullera esquerra (taronja)
+endShape();
   
+  fill(253, 241, 177);
   beginShape(); //I esclerotica esquerra,dreta (groc fluix)
 vertex(310, 278.1875);
 vertex(287, 260.1875);
@@ -831,8 +880,9 @@ vertex(284, 268.1875);
 vertex(279, 273.1875);
 vertex(276, 278.1875);
 vertex(309, 278.1875);
-endShape(); //F esclerotica esquerra,dreta (groc fluix)
+endShape();
   
+  fill(253, 241, 177);
   beginShape(); //I esclerotica esquerra,esquerra (groc fluix)
 vertex(229, 270.1875);
 vertex(236, 278.1875);
@@ -840,8 +890,9 @@ vertex(250, 278.1875);
 vertex(244, 271.1875);
 vertex(239, 261.1875);
 vertex(229, 269.1875);
-endShape(); //F esclerotica esquerra,esquerra (groc fluix)
+endShape();
   
+  fill(19, 146, 153);
   beginShape(); //I iris esquerra (blau)
 vertex(275, 277.1875);
 vertex(251, 277.1875);
@@ -863,8 +914,9 @@ vertex(287, 258.1875);
 vertex(285, 264.1875);
 vertex(281, 272.1875);
 vertex(275, 277.1875);
-endShape(); //F iris esquerra (blau)
+endShape();
   
+  fill(18, 47, 65);
   beginShape(); //I pupil.la esquerra (blau fort)
 vertex(271, 263.1875);
 vertex(265, 267.1875);
@@ -879,8 +931,9 @@ vertex(272, 250.1875);
 vertex(273, 255.1875);
 vertex(272, 260.1875);
 vertex(269, 264.1875);
-endShape(); //F pupil.la esquerra (blau fort)
+endShape();
   
+  fill(253, 211, 127);
   beginShape(); //I parpella s esquerra (groc)
 vertex(285, 248.1875);
 vertex(285, 226.1875);
@@ -888,8 +941,9 @@ vertex(242, 226.1875);
 vertex(242, 246.1875);
 vertex(276, 247.1875);
 vertex(285, 249.1875);
-endShape(); //F parpella s esquerra (groc)
+endShape();
   
+  fill(252, 166, 107);
   beginShape(); //I esclerotica esquerra (taronja)
 vertex(325, 278.1875);
 vertex(311, 278.1875);
@@ -900,8 +954,9 @@ vertex(299, 255.1875);
 vertex(306, 260.1875);
 vertex(314, 265.1875);
 vertex(325, 278.1875);
-endShape(); //F esclerotica esquerra (taronja)
+endShape();
   
+  fill(169, 122, 154);
   beginShape(); //I parpella s esquerra, dreta (lila fluix)
 vertex(326, 276.1875);
 vertex(326, 260.1875);
@@ -914,8 +969,9 @@ vertex(292, 251.1875);
 vertex(300, 255.1875);
 vertex(310, 262.1875);
 vertex(326, 276.1875);
-endShape(); //F parpella s esquerra, dreta (lila fluix)
+endShape();
   
+  fill(26, 84, 95);
   beginShape(); //I parpella s esquerra,esquerra (turquesa fort)
 vertex(241, 227.1875);
 vertex(232, 232.1875);
@@ -928,8 +984,9 @@ vertex(221, 255.1875);
 vertex(231, 250.1875);
 vertex(241, 247.1875);
 vertex(241, 227.1875);
-endShape(); //F parpella s esquerra,esquerra (turquesa fort)
+endShape();
   
+  fill(95, 124, 142);
   beginShape(); //I esclerotica esquerra (blau)
 vertex(228, 270.1875);
 vertex(239, 261.1875);
@@ -938,8 +995,9 @@ vertex(229, 259.1875);
 vertex(223, 265.1875);
 vertex(215, 275.1875);
 vertex(228, 270.1875);
-endShape(); //F esclerotica esquerra (blau)
+endShape();
   
+  fill(23, 44, 65);
   beginShape(); //I pestanya esquerra (blau fosc)
 vertex(239, 254.1875);
 vertex(240, 248.1875);
@@ -956,7 +1014,7 @@ vertex(214, 277.1875);
 vertex(222, 266.1875);
 vertex(230, 259.1875);
 vertex(239, 255.1875);
-endShape(); //F pestanya esquerra (blau fosc)
+endShape();
   
   beginShape(); //I parpella s esquerra (blau fluix)
 vertex(285, 226.1875);
@@ -964,7 +1022,7 @@ vertex(286, 204.1875);
 vertex(242, 193.1875);
 vertex(243, 226.1875);
 vertex(284, 227.1875);
-endShape(); //F parpella s esquerra (blau fluix)
+endShape();
   
   beginShape(); //I nas centre petit (blau)
 vertex(376, 433.1875);
@@ -974,7 +1032,7 @@ vertex(386, 421.1875);
 vertex(371, 421.1875);
 vertex(371, 429.1875);
 vertex(375, 433.1875);
-endShape(); //F nas centre petit (blau)
+endShape();
   
   beginShape(); //I nas (rosa)
 vertex(370, 419.1875);
@@ -982,7 +1040,7 @@ vertex(386, 420.1875);
 vertex(386, 395.1875);
 vertex(371, 395.1875);
 vertex(370, 419.1875);
-endShape(); //F nas (rosa)
+endShape();
   
   beginShape(); //I nas dreta petit (blau)
 vertex(400, 429.1875);
@@ -991,7 +1049,7 @@ vertex(420, 436.1875);
 vertex(405, 445.1875);
 vertex(400, 445.1875);
 vertex(400, 431.1875);
-endShape(); //F nas dreta petit (blau)
+endShape();
   
   beginShape(); //I nas esquerra petit (blau fosc)
 vertex(355, 429.1875);
@@ -999,7 +1057,7 @@ vertex(338, 429.1875);
 vertex(337, 435.1875);
 vertex(355, 445.1875);
 vertex(356, 431.1875);
-endShape(); //F nas esquerra petit (blau fosc)
+endShape();
   
   beginShape(); //I nas centre petit (groc)
 vertex(371, 395.1875);
@@ -1007,7 +1065,7 @@ vertex(371, 374.1875);
 vertex(385, 373.1875);
 vertex(386, 395.1875);
 vertex(371, 396.1875);
-endShape(); //F nas centre petit (groc)
+endShape();
   
   beginShape(); //I nas esquerra petit (lila fluix)
 vertex(371, 420.1875);
@@ -1017,7 +1075,7 @@ vertex(356, 411.1875);
 vertex(361, 412.1875);
 vertex(365, 414.1875);
 vertex(370, 420.1875);
-endShape(); //F nas esquerra petit (lila fluix)
+endShape();
   
   beginShape(); //I nas dreta petit (lila)
 vertex(387, 396.1875);
@@ -1026,7 +1084,7 @@ vertex(400, 411.1875);
 vertex(394, 414.1875);
 vertex(386, 419.1875);
 vertex(387, 396.1875);
-endShape(); //F nas dreta petit (lila)
+endShape();
   
   beginShape(); //I nas esquerre abaix (blau fluix)
 vertex(337, 330.1875);
@@ -1037,7 +1095,7 @@ vertex(321, 338.1875);
 vertex(326, 333.1875);
 vertex(331, 331.1875);
 vertex(337, 330.1875);
-endShape(); //F nas esquerre abaix (blau fluix)
+endShape();
   
   beginShape(); //I nas esquerre abaix gran (blau fosc)
 vertex(338, 428.1875);
@@ -1050,9 +1108,9 @@ vertex(348, 414.1875);
 vertex(342, 418.1875);
 vertex(338, 423.1875);
 vertex(338, 428.1875);
-endShape(); //F nas esquerre abaix gran (blau fosc)
+endShape();
   
-  beginShape(); //I fnas esquerre (blau fosc)
+  beginShape(); //I nas esquerre (blau fosc)
 vertex(337, 428.1875);
 vertex(338, 423.1875);
 vertex(344, 417.1875);
@@ -1063,7 +1121,7 @@ vertex(366, 416.1875);
 vertex(371, 420.1875);
 vertex(370, 428.1875);
 vertex(337, 428.1875);
-endShape(); //F fnas esquerre (blau fosc)
+endShape();
   
   beginShape(); //I nas dret abaix gran (blau)
 vertex(420, 436.1875);
@@ -1081,9 +1139,9 @@ vertex(400, 442.1875);
 vertex(402, 445.1875);
 vertex(406, 443.1875);
 vertex(420, 436.1875);
-endShape(); //F nas dret abaix gran (blau)
+endShape();
   
-  beginShape(); //I fnas dret (blau fosc)
+  beginShape(); //I nas dret (blau fosc)
 vertex(386, 428.1875);
 vertex(415, 428.1875);
 vertex(417, 425.1875);
@@ -1094,7 +1152,7 @@ vertex(396, 412.1875);
 vertex(390, 418.1875);
 vertex(386, 421.1875);
 vertex(385, 427.1875);
-endShape(); //F fnas dret (blau fosc)
+endShape();
   
   beginShape(); //I dnas dreta gran (blau fluix)
 vertex(422, 397.1875);
@@ -1106,7 +1164,7 @@ vertex(435, 215.1875);
 vertex(400, 250.1875);
 vertex(399, 381.1875);
 vertex(421, 396.1875);
-endShape(); //F dnas dreta gran (blau fluix)
+endShape();
   
   beginShape(); //I dnas esquerra gran (lila)
 vertex(356, 382.1875);
@@ -1118,7 +1176,7 @@ vertex(336, 265.1875);
 vertex(337, 271.1875);
 vertex(337, 394.1875);
 vertex(357, 382.1875);
-endShape(); //F dnas esquerra gran (lila)
+endShape();
   
   beginShape(); //I dnas centre gran (groc fluix)
 vertex(371, 250.1875);
@@ -1126,7 +1184,7 @@ vertex(386, 250.1875);
 vertex(386, 372.1875);
 vertex(371, 372.1875);
 vertex(370, 250.1875);
-endShape(); //F dnas centre gran (groc fluix)
+endShape();
   
   beginShape(); //I nas petit dreta (groc fluix)
 vertex(400, 395.1875);
@@ -1134,7 +1192,7 @@ vertex(400, 382.1875);
 vertex(386, 373.1875);
 vertex(386, 395.1875);
 vertex(400, 395.1875);
-endShape(); //F nas petit dreta (groc fluix)
+endShape();
   
   beginShape(); //I nas petit esquerra (lila)
 vertex(357, 395.1875);
@@ -1142,7 +1200,7 @@ vertex(370, 395.1875);
 vertex(371, 373.1875);
 vertex(357, 382.1875);
 vertex(356, 394.1875);
-endShape(); //F nas petit esquerra (lila)
+endShape();
   
   beginShape(); //I dnas dreta llarg (groc)
 vertex(399, 381.1875);
@@ -1150,7 +1208,7 @@ vertex(400, 250.1875);
 vertex(387, 250.1875);
 vertex(386, 372.1875);
 vertex(399, 381.1875);
-endShape(); //F dnas dreta llarg (groc)
+endShape();
   
   beginShape(); //I dnas esquerra llarg (blau fluix)
 vertex(357, 250.1875);
@@ -1158,7 +1216,7 @@ vertex(370, 250.1875);
 vertex(370, 372.1875);
 vertex(357, 382.1875);
 vertex(356, 251.1875);
-endShape(); //F dnas esquerra llarg (blau fluix)
+endShape();
   
   beginShape(); //I ullera dreta (blau cel)
 vertex(434, 279.1875);
@@ -1174,7 +1232,7 @@ vertex(455, 301.1875);
 vertex(445, 296.1875);
 vertex(437, 288.1875);
 vertex(433, 279.1875);
-endShape(); //F ullera dreta (blau cel)
+endShape();
   
   beginShape(); //I ullera dreta (turquesa)
 vertex(481, 289.1875);
@@ -1196,7 +1254,7 @@ vertex(514, 291.1875);
 vertex(505, 292.1875);
 vertex(494, 290.1875);
 vertex(481, 289.1875);
-endShape(); //F ullera dreta (turquesa)
+endShape();
   
   beginShape(); //I ullera dreta (taronja)
 vertex(456, 279.1875);
@@ -1212,7 +1270,7 @@ vertex(499, 291.1875);
 vertex(484, 288.1875);
 vertex(472, 285.1875);
 vertex(457, 279.1875);
-endShape(); //F ullera dreta (taronja)
+endShape();
   
   beginShape(); //I esclerotica dreta dreta (groc fluix)
 vertex(509, 278.1875);
@@ -1222,7 +1280,7 @@ vertex(520, 260.1875);
 vertex(518, 266.1875);
 vertex(514, 271.1875);
 vertex(508, 277.1875);
-endShape(); //F esclerotica dreta dreta (groc fluix)
+endShape();
   
   beginShape(); //I esclerotica dreta esquerra (groc fluix)
 vertex(448, 278.1875);
@@ -1232,7 +1290,7 @@ vertex(475, 267.1875);
 vertex(472, 260.1875);
 vertex(472, 259.1875);
 vertex(447, 278.1875);
-endShape(); //F esclerotica dreta esquerra (groc fluix)
+endShape();
   
   beginShape(); //I iris dret (blau fluix)
 vertex(473, 250.1875);
@@ -1262,7 +1320,7 @@ vertex(479, 274.1875);
 vertex(476, 268.1875);
 vertex(473, 259.1875);
 vertex(472, 250.1875);
-endShape(); //F iris dret (blau fluix)
+endShape();
   
   beginShape(); //I pupila dreta (blau fosc)
 vertex(491, 247.1875);
@@ -1276,24 +1334,20 @@ vertex(487, 262.1875);
 vertex(485, 256.1875);
 vertex(487, 251.1875);
 vertex(492, 247.1875);
-endShape(); //F pupila dreta (blau fosc)
+endShape();
   
-  beginShape(); //I esclerotica dreta (taronja)
-vertex(472, 251.1875);
+  beginShape(); // esclerotica dreta (taronja fort)
+vertex(449, 277.1875);
 vertex(472, 259.1875);
-vertex(458, 270.1875);
-vertex(452, 275.1875);
-vertex(448, 278.1875);
-vertex(433, 278.1875);
-vertex(436, 274.1875);
-vertex(443, 268.1875);
-vertex(448, 263.1875);
-vertex(457, 257.1875);
-vertex(463, 254.1875);
-vertex(472, 251.1875);
-endShape(); //F esclerotica dreta (taronja)
+vertex(473, 250.1875);
+vertex(459, 256.1875);
+vertex(452, 261.1875);
+vertex(441, 270.1875);
+vertex(434, 278.1875);
+vertex(449, 277.1875);
+endShape();
   
-  beginShape(); //I cella dreta (groga)
+  beginShape(); //cella dreta (groga)
 vertex(474, 227.1875);
 vertex(518, 226.1875);
 vertex(518, 247.1875);
@@ -1301,7 +1355,7 @@ vertex(487, 247.1875);
 vertex(479, 248.1875);
 vertex(473, 250.1875);
 vertex(473, 228.1875);
-endShape(); //F cella dreta (groga)
+endShape();
   
   beginShape(); //I cella dreta (taronja)
 vertex(432, 260.1875);
@@ -1319,7 +1373,19 @@ vertex(449, 262.1875);
 vertex(443, 268.1875);
 vertex(433, 277.1875);
 vertex(433, 260.1875);
-endShape(); //F cella dreta (taronja)
+endShape();
+  
+  fill(142, 92, 134); 
+  beginShape(); // cristal·lí dreta
+vertex(520, 260.1875);
+vertex(521, 254.1875);
+vertex(528, 258.1875);
+vertex(534, 263.1875);
+vertex(539, 268.1875);
+vertex(544, 275.1875);
+vertex(532, 271.1875);
+vertex(520, 261.1875);
+endShape();
             
             break;
           case "sad":
