@@ -136,7 +136,8 @@
 
       switch (dominant) {
           case "happy":
- fill(146*intensity, 89*intensity, 132*intensity);
+          fill(x*intensity, x*intensity, x*intensity);{
+ fill(146, 89, 132);
   beginShape(); // llavi abaix dreta (lila)
   vertex(480, 521.1875);
   vertex(480, 556.1875);
@@ -1386,6 +1387,7 @@ vertex(544, 275.1875);
 vertex(532, 271.1875);
 vertex(520, 261.1875);
 endShape();
+          }
             
             break;
           case "sad":
