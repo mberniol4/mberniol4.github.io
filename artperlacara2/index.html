@@ -6028,18 +6028,6 @@ vertex(701, 111.1875);
 vertex(708, 123.1875);
 endShape();
           
-            // Cas: expressió "disgusted" (disgustat) -> dibuix abstracte amb línies irregulars
-            stroke(0, 150, 0, 150);
-            // Traç de color verd amb transparència
-            beginShape();
-            for (let x = -250; x <= 250; x += 15) {
-              // Recorre l'eix X amb increments de 15 píxels
-              let y = random(-50, 50) * intensity;
-              // La coordenada y és un valor aleatori (multiplicat per la intensitat)
-              vertex(x, y);
-              // Afegeix aquest punt a la forma abstracta
-            }
-            endShape();
             break;
           default:
           scale(0.6);
